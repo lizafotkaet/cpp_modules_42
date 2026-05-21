@@ -10,9 +10,9 @@ class PhoneBook{
         Contact contacts[8];
     
     public :
-        void addContact();
+        void addNewContact();
         void searchContact();
         void deleteContact();
-}
+};
 
 #endif

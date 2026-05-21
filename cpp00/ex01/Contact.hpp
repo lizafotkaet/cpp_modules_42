@@ -14,7 +14,11 @@ class Contact{
 		std::string darkest_secret;
 	
 	public :
-		
-}
+		void setFirstName(std::string first_name);
+		void setLastName(std::string last_name);
+		void setNickname(std::string nickname);
+		void setPhoneNumber(std::string phone_number);
+		void setDarkestSecret(std::string darkest_secret);
+};
 
 #endif

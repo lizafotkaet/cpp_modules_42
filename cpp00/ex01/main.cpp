@@ -17,9 +17,9 @@ int main(int ac, char **av)
 		if (line == "EXIT")
 			return (0);
 		if (line == "ADD")
-			AddNewContact(pb);
+			phonebook.addNewContact();
 		if (line == "SEARCH")
-			SearchContact(pb);
+			phonebook.searchContact();
 	}
 	return (0);
 }
