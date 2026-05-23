@@ -1,5 +1,5 @@
 #include "Contact.hpp"
-
+#include "PhoneBook.hpp"
 
 void Contact::setFirstName(std::string first_name){
 	this->first_name = first_name;

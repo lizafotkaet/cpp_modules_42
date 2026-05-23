@@ -19,6 +19,11 @@ class Contact{
 		void setNickname(std::string nickname);
 		void setPhoneNumber(std::string phone_number);
 		void setDarkestSecret(std::string darkest_secret);
+		std::string getFirstName() const { return first_name; }
+		std::string getLastName() const { return last_name; }
+		std::string getNickname() const { return nickname; }
+		std::string getPhoneNumber() const { return phone_number; }
+		std::string getDarkestSecret() const { return darkest_secret; }
 };
 
 #endif

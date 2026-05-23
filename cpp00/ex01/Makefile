@@ -6,8 +6,8 @@ CXXFLAGS = -Wall -Wextra -Werror
 SRCDIR = .
 OBJDIR = .
 
-SOURCES = main.cpp Phonebook.cpp Contact.cpp
-HEADERS = Phonebook.hpp Contact.hpp
+SOURCES = main.cpp PhoneBook.cpp Contact.cpp
+HEADERS = PhoneBook.hpp Contact.hpp
 OBJECTS = $(SOURCES:.cpp=.o)
 
 all: $(NAME)
