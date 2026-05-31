@@ -1,12 +1,22 @@
 #include "Account.hpp"
 
-Account::Account( int initial_deposit ){
+int Account::_nbAccounts = 0;
+int Account::_totalAmount = 0;
 
+Account::Account( int initial_deposit ) : _nbDeposits(), _nbWithdrawals(), _amount(initial_deposit){
+
+    _accountIndex = _nbAccounts++;
+    _totalAmount += _amount;
+
+    ::_displayTimestamp();
+    std::cout << "index: " << _accountIndex << ";amount: " << _amount;
 }
 
 Account::~Account( void ){
 
-}
+
+
+};
 
 static void	_displayTimestamp( void ){
 
