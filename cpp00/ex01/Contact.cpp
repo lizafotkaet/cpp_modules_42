@@ -1,22 +1,44 @@
 #include "Contact.hpp"
 #include "PhoneBook.hpp"
+ 
+Contact::Contact() : index{-1} {};
 
-void Contact::setFirstName(std::string first_name){
-	this->first_name = first_name;
+std::string promptArg(std::string argName){
+	std::string line;
+
+	while (line == ""){
+		std::cout << "Enter the " << argName << ": ";
+		if (!getline(std::cin, line) || std::cin.eof()){
+			std::cout << "Field can't be empty. Try again\n";
+		}
+	}
+	return (line);
 }
 
-void Contact::setLastName(std::string last_name){
-	this->last_name = last_name;
+void Contact::setContact(int i){
+	index = i;
+
+	first_name = promptArg("first name");
+	last_name = promptArg("last name");
+	nickname = promptArg("nickname");
+	phone_number = promptArg("phone number");
+	darkest_secret = promptArg("darkest secret"); 
 }
 
-void Contact::setNickname(std::string nickname){
-	this->nickname = nickname;
-}
+void Contact::printContactFull(){
+    std::cout << std::setw(10) << 42 << '\n';
 
-void Contact::setPhoneNumber(std::string phone_number){
-	this->phone_number = phone_number;
-}
+	std::cout << index;
+	std::cout << first_name;
+	std::cout << last_name;
+	std::cout << nickname;
+	std::cout << phone_number;
+	std::cout << darkest_secret;
+};
 
-void Contact::setDarkestSecret(std::string darkest_secret){
-	this->darkest_secret = darkest_secret;
-}
+void Contact::printContactShort(){
+	std::cout << index;
+	std::cout << first_name;
+	std::cout << last_name;
+	std::cout << nickname;
+};
