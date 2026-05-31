@@ -25,20 +25,31 @@ void Contact::setContact(int i){
 	darkest_secret = promptArg("darkest secret"); 
 }
 
-void Contact::printContactFull(){
-    std::cout << std::setw(10) << 42 << '\n';
+#include <iomanip>
+#include <iostream>
 
-	std::cout << index;
-	std::cout << first_name;
-	std::cout << last_name;
-	std::cout << nickname;
-	std::cout << phone_number;
-	std::cout << darkest_secret;
-};
+static std::string formatField(const std::string& str)
+{
+    if (str.length() > 10)
+        return str.substr(0, 9) + ".";
+    return str;
+}
 
-void Contact::printContactShort(){
-	std::cout << index;
-	std::cout << first_name;
-	std::cout << last_name;
-	std::cout << nickname;
-};
+void Contact::printContactShort()
+{
+    std::cout << std::setw(10) << index << "|";
+    std::cout << std::setw(10) << formatField(first_name) << "|";
+    std::cout << std::setw(10) << formatField(last_name) << "|";
+    std::cout << std::setw(10) << formatField(nickname) << '\n';
+}
+
+void Contact::printContactFull()
+{
+    std::cout << "Index: " << index << '\n';
+    std::cout << "First name: " << first_name << '\n';
+    std::cout << "Last name: " << last_name << '\n';
+    std::cout << "Nickname: " << nickname << '\n';
+    std::cout << "Phone number: " << phone_number << '\n';
+    std::cout << "Darkest secret: " << darkest_secret << '\n';
+}
+
