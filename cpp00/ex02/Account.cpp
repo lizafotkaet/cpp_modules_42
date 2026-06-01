@@ -8,18 +8,18 @@ int Account::_totalAmount = 0;
 int Account::_totalNbDeposits = 0;
 int Account::_totalNbWithdrawals = 0;
 
-Account::Account( int initial_deposit ) : _nbDeposits(), _nbWithdrawals(), _amount(initial_deposit){
+Account::Account( int initial_deposit ) : _amount(initial_deposit), _nbDeposits(), _nbWithdrawals() {
 
     _accountIndex = _nbAccounts++;
     _totalAmount += _amount;
 
-    ::_displayTimestamp();
+    Account::_displayTimestamp();
     std::cout << "index:" << _accountIndex << ";amount:" << _amount << ";created\n";
 }
 
 Account::~Account( void ){
 //[19920104_091532] index:0;amount:47;closed
-    ::_displayTimestamp();
+    Account::_displayTimestamp();
     std::cout << "index:" << _accountIndex << ";amount:" << _amount << ";closed\n";
     _nbAccounts--;
     _totalAmount -= _amount;
@@ -30,18 +30,18 @@ Account::~Account( void ){
 // ----------- static private method ----------------------
 // --------------------------------------------------------
 
-void	_displayTimestamp( void ){
-    std::time_t now = std::time(nullptr);
-    std::tm* timeinfo = std::localtime(&now);
-    std::cout << "[";
-    std::cout << std::put_time(timeinfo, "%Y%m%d_%H%M%S");
-    std::cout << "] ";
-
-    // std::time_t now = std::time(nullptr);
+void	Account::_displayTimestamp( void ){
+    // std::time_t now = std::time(NULL);
     // std::tm* timeinfo = std::localtime(&now);
-    // char buffer[20];
-    // std::strftime(buffer, sizeof(buffer), "%Y%m%d_%H%M%S", timeinfo);
-    // std::cout << "[" << buffer << "] ";
+    // std::cout << "[";
+    // std::cout << std::put_time(timeinfo, "%Y%m%d_%H%M%S");
+    // std::cout << "] ";
+
+    std::time_t now = std::time(NULL);
+    std::tm* timeinfo = std::localtime(&now);
+    char buffer[20];
+    std::strftime(buffer, sizeof(buffer), "%Y%m%d_%H%M%S", timeinfo);
+    std::cout << "[" << buffer << "] ";
 }
 
 // --------------------------------------------------------
