@@ -25,9 +25,6 @@ void Contact::setContact(int i){
 	darkest_secret = promptArg("darkest secret"); 
 }
 
-#include <iomanip>
-#include <iostream>
-
 static std::string formatField(const std::string& str)
 {
     if (str.length() > 10)
