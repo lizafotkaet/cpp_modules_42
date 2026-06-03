@@ -1,15 +1,11 @@
 #include "Contact.hpp"
 #include "PhoneBook.hpp"
 
-int main(int ac, char **av)
+int main(void)
 {
     PhoneBook   phonebook;
     std::string line{};
 
-	(void)ac;
-	(void)av;
-    // if (ac != 2)
-    //     return (1);
 	std::cout << "Available commands: ADD, SEARCH, EXIT" << '\n';
 	while (true)
 	{
