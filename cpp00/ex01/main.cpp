@@ -1,7 +1,5 @@
 #include "Contact.hpp"
 #include "PhoneBook.hpp"
-#include <thread>
-#include <chrono>
 
 int main(int ac, char **av)
 {
