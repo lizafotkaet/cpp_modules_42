@@ -3,6 +3,12 @@ NAME = phonebook
 CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror
 
+RED = \033[31m
+GREEN = \033[32m
+YELLOW = \033[33m
+BLUE = \033[34m
+RESET = \033[0m
+
 SRCDIR = .
 OBJDIR = .
 
@@ -13,16 +19,23 @@ OBJECTS = $(SOURCES:.cpp=.o)
 all: $(NAME)
 
 $(NAME): $(OBJECTS)
-	$(CXX) $(CXXFLAGS) -o $(NAME) $(OBJECTS)
+	@$(CXX) $(CXXFLAGS) -o $(NAME) $(OBJECTS)
+	@printf "$(GREEN)\nExecutable: $(NAME)$(RESET)\n"
+	@rm -f .compile_started
 
 %.o: %.cpp $(HEADERS)
-	$(CXX) $(CXXFLAGS) -c $< -o $@
+	@if [ ! -f .compile_started ]; then printf "$(YELLOW)Compiling$(RESET)"; touch .compile_started; fi
+	@printf "$(BLUE).$(RESET)"
+	@$(CXX) $(CXXFLAGS) -c $< -o $@
 
 clean:
-	rm -f $(OBJECTS)
+	@printf "$(WHITE)Removing object files$(RESET)"
+	@for obj in $(OBJECTS); do printf "."; rm -f $$obj; done
+	@printf "\n"
 
 fclean: clean
-	rm -f $(NAME)
+	@rm -f $(NAME)
+	@printf "$(RED)Removed the executable!$(RESET)\n"
 
 re: fclean all
 

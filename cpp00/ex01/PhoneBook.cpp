@@ -30,7 +30,11 @@ void PhoneBook::searchContact(){
 
     while (line == ""){
         std::cout << "Enter the index of the contact you want to be displayed: ";
-        if (!getline(std::cin, line) || std::cin.eof()){
+        if (!getline(std::cin, line)){
+            if (std::cin.eof()){
+                std::cout << "\nEOF\n";
+                return exit(EXIT_FAILURE);
+            }
             std::cout << "An error occured. Try again.\n";
             line = "";
             continue ;

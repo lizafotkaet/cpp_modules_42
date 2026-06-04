@@ -8,7 +8,11 @@ std::string promptArg(std::string argName){
 
 	while (line == ""){
 		std::cout << "Enter the " << argName << ": ";
-		if (!getline(std::cin, line) || std::cin.eof()){
+		if (!getline(std::cin, line) || line.length() == 0){
+			if (std::cin.eof()){
+				std::cout << "\nEOF\n";
+				return exit(EXIT_FAILURE), "";
+			}
 			std::cout << "Field can't be empty. Try again\n";
 		}
 	}
@@ -19,10 +23,20 @@ void Contact::setContact(int i){
 	index = i;
 
 	first_name = promptArg("first name");
+	if (first_name == "")
+		return ;
 	last_name = promptArg("last name");
+	if (last_name == "")
+		return ;
 	nickname = promptArg("nickname");
+	if (nickname == "")
+		return ;
 	phone_number = promptArg("phone number");
-	darkest_secret = promptArg("darkest secret"); 
+	if (phone_number == "")
+		return ;
+	darkest_secret = promptArg("darkest secret");
+	if (darkest_secret == "")
+		return ;
 }
 
 static std::string formatField(const std::string& str)
