@@ -15,7 +15,7 @@ int main(void)
 				std::cout << "\nEOF\n";
 				return exit(EXIT_FAILURE), 1;
 			}
-			std::cout << "Error: enter a valid command.\n";
+			std::cout << "Error: line can't be empty.\n";
 			continue ;
 		}
 		if (line == "EXIT")
@@ -24,6 +24,8 @@ int main(void)
 			phonebook.addNewContact();
 		if (line == "SEARCH")
 			phonebook.searchContact();
+		else if (line != "ADD" && line != "SEARCH")
+			std::cout << "Error: enter a valid command.\n";
 	}
 	return (0);
 }

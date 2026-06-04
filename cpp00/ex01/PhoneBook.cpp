@@ -23,6 +23,8 @@ void PhoneBook::addNewContact(){
 void PhoneBook::searchContact(){
     std::string line;
 
+    std::cout << std::setw(10) << "Index" << "|" << std::setw(10) << "First Name" << "|";
+    std::cout << std::setw(10) << "Last Name" << "|" << std::setw(10) << "Nickname" << "\n";
     for (ssize_t i = 0; i < total; i++)
         contacts[i].printContactShort();
 
@@ -41,7 +43,14 @@ void PhoneBook::searchContact(){
         }
         
         try {
-            i = std::stoi(line);
+            // if the pos parameter will point to either the last character of int or the next character after int (ex 42k, pos will be 2)
+            size_t pos;
+            i = std::stoi(line, &pos);
+            if (pos != line.length()) {
+                std::cout << "Invalid input. Try again.\n";
+                line = "";
+                continue ;
+            }
             if (i < 0 || i > 7){
                 std::cout << "Wrong index: should be from 0 to 7. Try again.\n";
                 line = "";

@@ -19,5 +19,4 @@ class Contact{
 		void printContactFull();
 		void printContactShort();
 		int getIndex() const {return index;};
-//		std::tuple<std::string, std::string, std::string,> getContact() const {return first_name, last_na}
 };
