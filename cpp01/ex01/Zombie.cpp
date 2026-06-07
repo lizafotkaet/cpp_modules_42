@@ -8,6 +8,3 @@ Zombie::~Zombie() {
     std::cout << RED << "Destructor called for " << Name << RESET << std::endl;
 }
 
-void Zombie::announce( void ){
-    std::cout << Name << ": BraiiiiiiinnnzzzZ...\n";
-}
