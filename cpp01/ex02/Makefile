@@ -1,26 +1,13 @@
-NAME = phonebook
-
+NAME = ./string
 CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror
 
-SRCDIR = .
-OBJDIR = .
-
-SOURCES = main.cpp PhoneBook.cpp Contact.cpp
-HEADERS = PhoneBook.hpp Contact.hpp
-OBJECTS = $(SOURCES:.cpp=.o)
-
 all: $(NAME)
 
-$(NAME): $(OBJECTS)
-	$(CXX) $(CXXFLAGS) -o $(NAME) $(OBJECTS)
-
-%.o: %.cpp $(HEADERS)
-	$(CXX) $(CXXFLAGS) -c $< -o $@
+$(NAME): main.cpp
+	$(CXX) $(CXXFLAGS) -o $(NAME) main.cpp
 
 clean:
-	rm -f $(OBJECTS)
-
 fclean: clean
 	rm -f $(NAME)
 
