@@ -1,25 +1,28 @@
-NAME = phonebook
+NAME = ./zombieHorde
 
 CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror
 
 SRCDIR = .
-OBJDIR = .
+OBJDIR = obj
 
-SOURCES = main.cpp PhoneBook.cpp Contact.cpp
-HEADERS = PhoneBook.hpp Contact.hpp
-OBJECTS = $(SOURCES:.cpp=.o)
+SOURCES = main.cpp Zombie.cpp zombieHorde.cpp
+HEADERS = Zombie.hpp
+OBJECTS = $(addprefix $(OBJDIR)/,$(SOURCES:.cpp=.o))
 
 all: $(NAME)
 
-$(NAME): $(OBJECTS)
+$(OBJDIR):
+	mkdir -p $(OBJDIR)
+
+$(NAME): $(OBJDIR) $(OBJECTS)
 	$(CXX) $(CXXFLAGS) -o $(NAME) $(OBJECTS)
 
-%.o: %.cpp $(HEADERS)
+$(OBJDIR)/%.o: %.cpp $(HEADERS)
 	$(CXX) $(CXXFLAGS) -c $< -o $@
 
 clean:
-	rm -f $(OBJECTS)
+	rm -rf $(OBJDIR)
 
 fclean: clean
 	rm -f $(NAME)
