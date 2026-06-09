@@ -67,5 +67,6 @@ void PhoneBook::searchContact(){
         }
     }
 
-    contacts[i].printContactFull();
+    if (contacts[i].getIndex() > -1)
+        contacts[i].printContactFull();
 };
