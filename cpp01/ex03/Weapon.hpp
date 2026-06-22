@@ -5,8 +5,10 @@
 class Weapon{
     
     public :
-        const std::string& getType();
-        void setType(std::string& newType);
+        Weapon(const std::string& type);
+//        ~Weapon(); // do we need a destructor here and why/why not
+        const std::string& getType() const;
+        void setType(const std::string& newType);
 
     private :
         std::string type;
