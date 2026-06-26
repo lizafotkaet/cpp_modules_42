@@ -6,8 +6,8 @@ CXXFLAGS = -Wall -Wextra -Werror
 SRCDIR = .
 OBJDIR = obj
 
-SOURCES = main.cpp Weapon.cpp HumanA.cpp HumanB.cpp
-HEADERS = Weapon.hpp HumanA.hpp HumanB.hpp
+SOURCES = main.cpp
+HEADERS = .
 OBJECTS = $(addprefix $(OBJDIR)/,$(SOURCES:.cpp=.o))
 
 all: $(NAME)
