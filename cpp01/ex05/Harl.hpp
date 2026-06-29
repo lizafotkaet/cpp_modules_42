@@ -3,6 +3,9 @@
 #include <iostream>
 #include <string>
 
+#define RED "\033[31m"
+#define RESET "\033[0m"
+
 class Harl{
 
 	public :
