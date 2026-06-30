@@ -1,4 +1,4 @@
-NAME = ./string
+NAME = ./hithisisbrain
 CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror
 
