@@ -3,7 +3,7 @@
 #include <iostream>
 #include <string>
 
-std::string replace_text(std::ifstream& inputFile, std::string& s1, std::string& s2)
+std::string replace_text(std::fstream& inputFile, std::string& s1, std::string& s2)
 {
 	std::stringstream	buffer;
 	buffer << inputFile.rdbuf();
@@ -30,7 +30,7 @@ int main(int argc, char** argv) {
     std::string s2 = argv[3];
 
     
-    std::ifstream file(argv[1]);
+    std::fstream file(argv[1]);
     
     // !!! check that the file actually opened
     if (!file.is_open()) {

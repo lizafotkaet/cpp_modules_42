@@ -26,12 +26,12 @@ int main(void){
 
     // addresses (&str and &stringREF should be the same):
     std::cout << "The memory address of the string variable: " << RED << &str << RESET << '\n';
-    std::cout << "The memory address of the stringPTR variable: " << &stringPTR << '\n';
+    std::cout << "The memory address held by the stringPTR variable: " << RED << stringPTR << RESET <<'\n';
     std::cout << "The memory address of the stringREF variable: " << RED << &stringREF << RESET << '\n';
 
     // values (str and stringREF should be the same)
     std::cout << "The value of the string variable: " << GREEN << str << RESET << '\n';
-    std::cout << "The value of the stringPTR variable: " << RED << stringPTR << RESET << '\n';
+    std::cout << "The value pointed to by the stringPTR variable: " << GREEN << *stringPTR << RESET << '\n';
     std::cout << "The value of the stringREF variable: " << GREEN << stringREF << RESET << '\n';
     
     return 0;

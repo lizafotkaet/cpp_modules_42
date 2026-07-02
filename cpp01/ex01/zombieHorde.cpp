@@ -5,6 +5,10 @@ Zombie* zombieHorde(int N, std::string name){
 	// 	return (std::cout << "There must be more than 0 zombies\n", nullptr);
 	
 	Zombie* horde = new Zombie[N];
+
+	if (horde == nullptr){
+		return nullptr;
+	}
 	
 	for (int i = 0; i < N; i++){
 		horde[i].setName(name + std::to_string(i + 1));
