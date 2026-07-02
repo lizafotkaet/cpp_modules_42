@@ -1,7 +1,7 @@
 NAME = ./zombie
 
 CXX = c++
-CXXFLAGS = -Wall -Wextra -Werror
+CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
 SRCDIR = .
 OBJDIR = obj
