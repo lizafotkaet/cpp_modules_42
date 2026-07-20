@@ -1,4 +1,4 @@
-NAME = ./Fixed
+NAME = ./FixedOverload
 
 CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
@@ -6,8 +6,8 @@ CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 SRCDIR = .
 OBJDIR = obj
 
-SOURCES = Fixed.cpp
-HEADERS = Fixed.hpp
+SOURCES = Fixed.cpp main.cpp
+HEADERS = Fixed.h
 OBJECTS = $(addprefix $(OBJDIR)/,$(SOURCES:.cpp=.o))
 
 all: $(NAME)

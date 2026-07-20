@@ -37,7 +37,11 @@ Fixed::~Fixed(){
 
 Fixed&	Fixed::operator=(const Fixed& other){
 	std::cout << "Copy assignment operator called\n";
-	this->setRawBits(other.getRawBits()); // we use setRawBits bc the object already exists
+
+	if (this != &other){
+		this->value = other.value; // can use getRawbits but I like this more
+	}
+
 	return (*this);
 }
 

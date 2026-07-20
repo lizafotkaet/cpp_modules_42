@@ -34,16 +34,16 @@ int	main(void){
 	std::cout << b.getRawBits() << std::endl;
 	std::cout << c.getRawBits() << std::endl;
 
-	a.setRawBits(4);
-	b = a;
-	c.setRawBits(6);
+	// a.setRawBits(4);
+	// b = a;
+	// c.setRawBits(6);
 
-	Fixed d(c);
+	// Fixed d(c);
 
-	std::cout << "a: " << a.getRawBits() << std::endl;
-	std::cout << "b: " << b.getRawBits() << std::endl;
-	std::cout << "c: " << c.getRawBits() << std::endl;
-	std::cout << "d: " << d.getRawBits() << std::endl;
+	// std::cout << "a: " << a.getRawBits() << std::endl;
+	// std::cout << "b: " << b.getRawBits() << std::endl;
+	// std::cout << "c: " << c.getRawBits() << std::endl;
+	// std::cout << "d: " << d.getRawBits() << std::endl;
 
 	return 0;
 }
