@@ -6,8 +6,8 @@ CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 SRCDIR = .
 OBJDIR = obj
 
-SOURCES = Fixed.cpp
-HEADERS = Fixed.hpp
+SOURCES = Fixed.cpp main.cpp Fixed.cpp Point.cpp bsp.cpp
+HEADERS = Fixed.h Point.h
 OBJECTS = $(addprefix $(OBJDIR)/,$(SOURCES:.cpp=.o))
 
 all: $(NAME)
