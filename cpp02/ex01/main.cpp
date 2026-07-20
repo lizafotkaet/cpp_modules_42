@@ -35,7 +35,7 @@ int main(void){
 
 
 	// std::cout << "putting a float into a: \n";
-	a = Fixed( 1234.4321f );
+	a = Fixed( 1234.4321f ); // basically a.operator=(b);
 	// std::cout << "finished putting a float into a\n";
 
 	std::cout << "a is " << a << std::endl;

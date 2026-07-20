@@ -16,6 +16,8 @@ Fixed& Fixed::operator=(const Fixed& other){
     return *this;
 }
 
+a = b;
+
 Fixed::Fixed(const int n) : value(n << fraction){
     std::cout << "Int constructor called\n";
 }
@@ -34,7 +36,7 @@ void Fixed::setRawBits(const int raw){
 }
 
 int Fixed::toInt(void) const{
-    
+
 }
 
 float Fixed::toFloat(void) const{
