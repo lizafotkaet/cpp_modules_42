@@ -42,3 +42,14 @@ int Fixed::toInt(void) const{
 float Fixed::toFloat(void) const{
 
 }
+
+
+
+
+
+
+std::ostream& operator<<(std::ostream& out, const Fixed& fixed){
+    out << fixed.toFloat();
+
+    return out;
+}

@@ -16,18 +16,22 @@ class Fixed{
 		void setRawBits(int const raw);
 		int toInt(void) const;
 		float toFloat(void) const;
+
 		// 6 comparison operators: >, <, >=, <=, ==, and !=
+
 		bool operator<(const Fixed& other);
 		bool operator>(const Fixed& other);
 		bool operator>=(const Fixed& other);
 		bool operator<=(const Fixed& other);
 		bool operator==(const Fixed& other);
 		bool operator!=(const Fixed& other);
+
 		// 4 arithmetic operators: +, -, *, and /
-		Fixed& operator+(const Fixed& other);
-		Fixed& operator-(const Fixed& other);
-		Fixed& operator*(const Fixed& other);
-		Fixed& operator/(const Fixed& other);
+
+		Fixed operator+();
+		Fixed operator-();
+		Fixed operator*();
+		Fixed operator/(const Fixed& other);
 		// The 4 increment/decrement (pre-increment and post-increment, pre-decrement and
 		// post-decrement) operators, which will increase or decrease the fixed-point value by
 		// the smallest representable ϵ, such that 1 + ϵ > 1.
@@ -41,3 +45,5 @@ class Fixed{
 		int	value;
 		static const int fraction = 8;
 };
+
+std::ostream& operator<<(std::ostream& out, const Fixed& fixed);
