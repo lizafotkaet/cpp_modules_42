@@ -1,15 +1,19 @@
 #include "Fixed.h"
 
 Fixed::Fixed() : value(0){
-    std::cout << "Default constructor called\n";
+    std::cout << GREEN << "Default constructor called\n" << RESET;
+}
+
+Fixed::~Fixed(){
+	std::cout << RED << "Destructor called\n" << RESET;
 }
 
 Fixed::Fixed(const Fixed& other) : value(other.value){
-    std::cout << "Copy constructor called\n";
+    std::cout << YELLOW << "Copy constructor called\n" << RESET;
 }
 
 Fixed& Fixed::operator=(const Fixed& other){
-    std::cout << "Copy assignment operator called\n";
+    std::cout << LIGHTBLUE << "Copy assignment operator called\n" << RESET;
     if (this != &other){
         this->value = other.value;
     }
@@ -17,11 +21,11 @@ Fixed& Fixed::operator=(const Fixed& other){
 }
 
 Fixed::Fixed(const int n) : value(n << fraction){
-    std::cout << "Int constructor called\n";
+    std::cout << GREEN << "Int constructor called\n" << RESET;
 }
 
 Fixed::Fixed(const float f) : value(roundf(f * 256)){
-    std::cout << "Float constructor called\n";
+    std::cout << GREEN << "Float constructor called\n" << RESET;
 }
 
 int Fixed::getRawBits(void) const{
@@ -74,19 +78,33 @@ bool	Fixed::operator!=(const Fixed& other) const{
 // 4 arithmetic operators: +, -, *, and /
 
 Fixed	Fixed::operator+(const Fixed& other) const{
-	return (this->value + other.value);
+	Fixed result;
+
+	result.setRawBits(this->value + other.value);
+	return result;
 }
 
 Fixed	Fixed::operator-(const Fixed& other) const{
-	return (this->value - other.value);
+	Fixed result;
+
+	result.setRawBits(this->value - other.value);
+	return result;
 }
 
-Fixed	Fixed::operator*(const Fixed& other) const{
-	return (this->value * other.value);
+Fixed	Fixed::operator*(const Fixed& other) const{ // stores real * 256
+	Fixed result;
+
+	result.setRawBits(static_cast<int>
+				((static_cast<long>(this->value) * other.value) >> fraction)); // can't have 256*256, so shift (divide) by 2**8
+	return result;
 }
 
 Fixed	Fixed::operator/(const Fixed& other) const{
-	return (this->value / other.value);
+	Fixed result;
+
+	result.setRawBits(static_cast<int>
+				((static_cast<long>(this->value) << fraction) / other.value)); // the opposite: we divide by 256 twice and lose the raw fpn integer; gotta shift (multiply) by 2**8 again
+	return result;
 }
 
 // The 4 increment/decrement (pre-increment and post-increment, pre-decrement and
@@ -116,7 +134,7 @@ Fixed Fixed::operator++(int){ // postfix increment
 Fixed Fixed::operator--(int){ // postfix decrement
 	Fixed temp(*this);
 
-	++(*this);
+	--(*this);
 
 	return temp;
 }
