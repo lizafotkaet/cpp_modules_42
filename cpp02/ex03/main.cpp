@@ -1,24 +1,19 @@
 #include "Point.h"
 
-int	main(int ac, char** av){
-	(void)ac;
-	(void)av;
-	
-	Point a(9, 10);
-	Point b(1, 2);
-	Point c(3, 4);
-	Point p(5, 6);
+int	main(void){
+	Point a(0, 0.0002), b(20, 0), c(0, 20);
+
+	// Point a(9, 10);
+	// Point b(1, 2);
+	// Point c(10, 0);
+	Point p(55.73, 5.79);
 
 	if (bsp(a, b, c, p)){
-		std::cout << "The point is in the triangle\n";
+		std::cout << "The point is INSIDE the triangle\n";
 	}
 	else{
-		std::cout << "The point is outside the triangle\n";
+		std::cout << "The point is NOT INSIDE the triangle\n";
 	}
-
-	// std::cout << "Enter the coordinates of the vertices of the triangle: ";
-
-	// std::cin << a << b << c << std::endl;
 
 	return 0;
 }

@@ -1,19 +1,19 @@
 #include "Fixed.h"
 
 Fixed::Fixed() : value(0){
-    std::cout << GREEN << "Default constructor called\n" << RESET;
+	//std::cout << GREEN << "Default constructor called\n" << RESET;
 }
 
 Fixed::~Fixed(){
-	std::cout << RED << "Destructor called\n" << RESET;
+	//std::cout << RED << "Destructor called\n" << RESET;
 }
 
 Fixed::Fixed(const Fixed& other) : value(other.value){
-    std::cout << YELLOW << "Copy constructor called\n" << RESET;
+    //std::cout << YELLOW << "Copy constructor called\n" << RESET;
 }
 
 Fixed& Fixed::operator=(const Fixed& other){
-    std::cout << LIGHTBLUE << "Copy assignment operator called\n" << RESET;
+    //std::cout << LIGHTBLUE << "Copy assignment operator called\n" << RESET;
     if (this != &other){
         this->value = other.value;
     }
@@ -21,15 +21,15 @@ Fixed& Fixed::operator=(const Fixed& other){
 }
 
 Fixed::Fixed(const int n) : value(n << fraction){
-    std::cout << GREEN << "Int constructor called\n" << RESET;
+    //std::cout << GREEN << "Int constructor called\n" << RESET;
 }
 
 Fixed::Fixed(const float f) : value(roundf(f * 256)){
-    std::cout << GREEN << "Float constructor called\n" << RESET;
+    //std::cout << GREEN << "Float constructor called\n" << RESET;
 }
 
 int Fixed::getRawBits(void) const{
-    std::cout << "getRawBits called\n";
+    //std::cout << "getRawBits called\n";
     return this->value;
 }
 

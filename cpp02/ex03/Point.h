@@ -20,4 +20,5 @@ class Point{
 };
 
 bool	bsp(const Point& a, const Point& b, const Point& c, const Point& p);
-Fixed	triangleArea(const Point& a, const Point& b, const Point& c);
+Fixed	product(const Point& a, const Point& b, const Point& p);
+//Fixed	triangleArea(const Point& a, const Point& b, const Point& c);
