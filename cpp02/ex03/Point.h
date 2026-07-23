@@ -2,14 +2,22 @@
 
 #include <iostream>
 #include <cmath>
+#include "Fixed.h"
 
 class Point{
 	public :
-		Point(double x, double y);
-		double getX() const;
-		double getY() const;
+		Point();
+		Point(const float x, const float y); // convert to Fixed
+		Point(const Point& other);
+		Point& operator=(const Point& other);
+		~Point();
+		Fixed 	getX() const;
+		Fixed 	getY() const;
 
 	private : 
-		double m_x;
-		double m_y;
+		Fixed m_x;
+		Fixed m_y;
 };
+
+bool	bsp(const Point& a, const Point& b, const Point& c, const Point& p);
+Fixed	triangleArea(const Point& a, const Point& b, const Point& c);
