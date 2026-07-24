@@ -3,7 +3,7 @@
 //const int Fixed::fraction = 8;
 
 Fixed::Fixed() : value(0) {
-    std::cout << "Default constructor called\n";
+    std::cout << RED << "Default constructor called\n" << RESET;
 }
 
 Fixed::Fixed(const int n) : value(n << fraction){ // convert from int to fpn
@@ -16,15 +16,15 @@ Fixed::Fixed(const float f) : value (roundf(f * (1 << fraction))){ // convert fr
 }
 
 Fixed::Fixed(const Fixed& other) : value(other.value){
-    std::cout << "Copy constructor called\n";
+    std::cout << YELLOW << "Copy constructor called\n" << RESET;
 }
 
 Fixed::~Fixed(){
-    std::cout << "Destructor called\n";
+    std::cout << RED << "Destructor called\n" << RESET;
 }
 
 Fixed& Fixed::operator=(const Fixed& other){
-    std::cout << "Copy assignment operator called\n";
+    std::cout << LIGHTBLUE << "Copy assignment operator called\n" << RESET;
 
     if (this != &other){
         this->value = other.value;

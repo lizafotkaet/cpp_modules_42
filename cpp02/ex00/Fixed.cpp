@@ -24,19 +24,19 @@ $>
 #include "Fixed.h"
 
 Fixed::Fixed() : value(0) {
-    std::cout << "Default constructor called\n";
+    std::cout << GREEN << "Default constructor called\n" << RESET;
 }
 
 Fixed::Fixed(const Fixed& other) : value(other.value){ // we use initialization list bc the new object doesn't exist yet (safer)
-    std::cout << "Copy constructor called\n";
+    std::cout << YELLOW << "Copy constructor called\n" << RESET;
 }
 
 Fixed::~Fixed(){
-    std::cout << "Destructor called\n";
+    std::cout << RED << "Destructor called\n" << RESET;
 };
 
 Fixed&	Fixed::operator=(const Fixed& other){
-	std::cout << "Copy assignment operator called\n";
+	std::cout << LIGHTBLUE << "Copy assignment operator called\n" << RESET;
 
 	if (this != &other){
 		this->value = other.value; // can use getRawbits but I like this more
