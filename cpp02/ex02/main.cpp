@@ -23,14 +23,14 @@ int main() {
 	Fixed e(Fixed(11.1f) * Fixed(5));
 	Fixed const f(Fixed(12) / Fixed(8));
 
-	std::cout << a << std::endl;
-	std::cout << "Pre-incrementing a: " << ++a << std::endl;
-	std::cout << a << std::endl;
-	std::cout << "Post-incrementing a: " << a++ << std::endl;
-	std::cout << a << std::endl;
-	std::cout << b << std::endl;
-	std::cout << "Pre-decrementing a: " << --a << std::endl;
-	std::cout << "Post-decrementing a: " << a-- << std::endl;
+	std::cout << a << '\n';
+	std::cout << "Pre-incrementing a: " << ++a << '\n';
+	std::cout << a << '\n';
+	std::cout << "Post-incrementing a: " << a++ << '\n';
+	std::cout << a << '\n';
+	std::cout << b << '\n';
+	std::cout << "Pre-decrementing a: " << --a << '\n';
+	std::cout << "Post-decrementing a: " << a-- << '\n';
 	std::cout << "New a: " << a << '\n';
 	
 	std::cout << "Add (c): " << c << '\n';
@@ -38,8 +38,8 @@ int main() {
 	std::cout << "Multiply (e): " << e << '\n';
 	std::cout << "Divide (f): " << f << '\n';
 	
-	std::cout << "Max(a,b): " << Fixed::max( a, b ) << std::endl; // the whole call falls to const overload since non-const args can bind to a const reference
-	std::cout << "Min(e,f): " << Fixed::min( e, f ) << std::endl;
+	std::cout << "Max(a,b): " << Fixed::max( a, b ) << '\n'; // the whole call falls to const overload since non-const args can bind to a const reference
+	std::cout << "Min(e,f): " << Fixed::min( e, f ) << '\n';
 
 	return 0;
 }

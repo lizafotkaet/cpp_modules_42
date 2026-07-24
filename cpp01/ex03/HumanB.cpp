@@ -7,10 +7,10 @@ HumanB::HumanB(const std::string& name) : name(name) {
 
 void HumanB::attack(void){
     if (weapon){
-        std::cout << name << " attacks with " << weapon->getType() << std::endl;
+        std::cout << name << " attacks with " << weapon->getType() << '\n';
     }
     else{
-        std::cout << name << " attacks with their bare hands " << std::endl;
+        std::cout << name << " attacks with their bare hands " << '\n';
     }
 
 }

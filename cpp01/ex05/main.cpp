@@ -17,7 +17,7 @@ int main()
 	{
 		harl.complain(levels[i]);
 		std::cout << '\n';
-		std::cout << RED << "Press ENTER to continue..." << RESET << std::endl;
+		std::cout << RED << "Press ENTER to continue..." << RESET << '\n';
 		std::cin.get();
 	}
 

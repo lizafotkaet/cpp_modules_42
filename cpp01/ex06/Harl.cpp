@@ -41,19 +41,19 @@ void Harl::complain(std::string level)
 
     switch (i){
         case 0:
-            std::cout << RED << levels[0] << RESET << std::endl;
+            std::cout << RED << levels[0] << RESET << '\n';
             (this->*complaints[0])();
             // fall through
         case 1:
-            std::cout << RED << levels[1] << RESET << std::endl;
+            std::cout << RED << levels[1] << RESET << '\n';
             (this->*complaints[1])();
             // fall through
         case 2:
-            std::cout << RED << levels[2] << RESET << std::endl;
+            std::cout << RED << levels[2] << RESET << '\n';
             (this->*complaints[2])();
             // fall through
         case 3:
-            std::cout << RED << levels[3] << RESET << std::endl;
+            std::cout << RED << levels[3] << RESET << '\n';
             (this->*complaints[3])();
             break ;
         default: 

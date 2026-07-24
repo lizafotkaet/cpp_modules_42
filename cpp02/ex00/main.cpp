@@ -30,9 +30,9 @@ int	main(){
 
 	c = b;
 
-	std::cout << a.getRawBits() << std::endl;
-	std::cout << b.getRawBits() << std::endl;
-	std::cout << c.getRawBits() << std::endl;
+	std::cout << a.getRawBits() << '\n';
+	std::cout << b.getRawBits() << '\n';
+	std::cout << c.getRawBits() << '\n';
 
 	// a.setRawBits(4);
 	// b = a;
@@ -40,10 +40,10 @@ int	main(){
 
 	// Fixed d(c);
 
-	// std::cout << "a: " << a.getRawBits() << std::endl;
-	// std::cout << "b: " << b.getRawBits() << std::endl;
-	// std::cout << "c: " << c.getRawBits() << std::endl;
-	// std::cout << "d: " << d.getRawBits() << std::endl;
+	// std::cout << "a: " << a.getRawBits() << '\n';
+	// std::cout << "b: " << b.getRawBits() << '\n';
+	// std::cout << "c: " << c.getRawBits() << '\n';
+	// std::cout << "d: " << d.getRawBits() << '\n';
 
 	return 0;
 }
