@@ -17,3 +17,8 @@ int	main(void){
 
 	return 0;
 }
+
+
+// https://www.desmos.com/calculator
+//
+// polygon((0,0),(20,0),(0,20)), (5, 5)
