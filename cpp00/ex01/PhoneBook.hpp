@@ -2,7 +2,6 @@
 
 #include "Contact.hpp"
 
-
 class PhoneBook{
     private :
         static const int max_contacts = 8;

@@ -15,7 +15,7 @@ int main(int ac, char **av)
 //   std::cout << " ";
  }
  
- std::cout << std::endl;
+ std::cout << '\n';
 
  return(0);
 }
