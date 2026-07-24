@@ -10,7 +10,7 @@ class Fixed{
 		Fixed&	operator=(const Fixed& other); // copy assignment operator
 		~Fixed();
 
-		int getRawBits(void) const; // returns the raw value of the fixed-point value
+		int getRawBits() const; // returns the raw value of the fixed-point value
 		void setRawBits(int const raw); // sets the raw value of the fixed-point number
 
 	private :

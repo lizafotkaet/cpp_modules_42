@@ -13,10 +13,10 @@ class Fixed{
 		Fixed& operator=(const Fixed& other); //copy assignment operator
 		~Fixed();
 
-		int 	getRawBits(void) const; // returns the raw value of the fpn
+		int 	getRawBits() const; // returns the raw value of the fpn
 		void	setRawBits(int const raw); // sets the raw value of the fpn
-		int		toInt(void) const;
-		float	toFloat(void) const;
+		int		toInt() const;
+		float	toFloat() const;
 
 	private :
 		int					value;

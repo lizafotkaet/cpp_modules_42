@@ -11,7 +11,7 @@ Fixed::Fixed(const int n) : value(n << fraction){ // convert from int to fpn
 //	this->value = n << fraction;
 }
 
-Fixed::Fixed(const float f) : value (roundf(f * 256)){ // convert from float to fpn rounding to the closest int
+Fixed::Fixed(const float f) : value (roundf(f * (1 << fraction))){ // convert from float to fpn rounding to the closest int
 	std::cout << "Float constructor called\n";
 }
 
@@ -42,14 +42,14 @@ void Fixed::setRawBits(const int raw){
     this->value = raw;
 }
 
-int	Fixed::toInt(void) const{ // convert from fpn to int
+int	Fixed::toInt() const{ // convert from fpn to int
 	int n = (this->value >> fraction);
 
     return n;
 }
 
-float Fixed::toFloat(void) const{ // convert from fpn to float
-    float f = (this->value / 256.0); // .0 matters, otherwise I get an integer
+float Fixed::toFloat() const{ // convert from fpn to float
+    float f = (this->value / static_cast<float>(1 << fraction)); // .0 matters, otherwise I get an integer
 
     return f;
 }

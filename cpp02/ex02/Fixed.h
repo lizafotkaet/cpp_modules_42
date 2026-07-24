@@ -21,8 +21,8 @@ class Fixed{
 
 		int getRawBits() const;
 		void setRawBits(int const raw);
-		int toInt(void) const;
-		float toFloat(void) const;
+		int toInt() const;
+		float toFloat() const;
 
 		// 6 comparison operators: >, <, >=, <=, ==, and != 
 

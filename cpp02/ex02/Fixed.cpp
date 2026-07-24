@@ -24,11 +24,11 @@ Fixed::Fixed(const int n) : value(n << fraction){
     //std::cout << GREEN << "Int constructor called\n" << RESET;
 }
 
-Fixed::Fixed(const float f) : value(roundf(f * 256)){
+Fixed::Fixed(const float f) : value(roundf(f * (1 << fraction))){
     //std::cout << GREEN << "Float constructor called\n" << RESET;
 }
 
-int Fixed::getRawBits(void) const{
+int Fixed::getRawBits() const{
     //std::cout << "getRawBits called\n";
     return this->value;
 }
@@ -37,14 +37,14 @@ void Fixed::setRawBits(const int raw){
     this->value = raw;
 }
 
-int Fixed::toInt(void) const{
+int Fixed::toInt() const{
     int n = (this->value >> fraction);
 
     return n;
 }
 
-float Fixed::toFloat(void) const{
-    float f = (this->value / 256.0); // .0 matters or I get and int
+float Fixed::toFloat() const{
+    float f = (this->value / static_cast<float>(1 << fraction)); // .0 matters or I get and int
 
     return f;
 }

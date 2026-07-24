@@ -11,10 +11,10 @@ Point::Point(const Point& other) : m_x(other.m_x), m_y (other.m_y) {}
 
 Point& Point::operator=(const Point& other){
     if (this->m_x != other.m_x){
-        this->m_x == other.m_x;
+        this->m_x = other.m_x;
     }
     if (this->m_y != other.m_y){
-        this->m_y == other.m_y;
+        this->m_y = other.m_y;
     }
     return *this;
 }

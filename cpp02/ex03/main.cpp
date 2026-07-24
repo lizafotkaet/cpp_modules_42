@@ -6,7 +6,7 @@ int	main(void){
 	// Point a(9, 10);
 	// Point b(1, 2);
 	// Point c(10, 0);
-	Point p(55.73, 5.79);
+	Point p(5.73, 5.79);
 
 	if (bsp(a, b, c, p)){
 		std::cout << "The point is INSIDE the triangle\n";
