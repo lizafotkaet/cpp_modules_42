@@ -1,31 +1,32 @@
-NAME = ./bsp
+NAME = scavtrap
+COM = c++
+FLAGS = -Wall -Wextra -Werror 
 
-CXX = c++
-CXXFLAGS = -Wall -Wextra -Werror -std=c++98
+SRC_DIR = src
+OBJ_DIR = obj
+INC_DIR = inc
 
-SRCDIR = .
-OBJDIR = obj
+SRC =	$(SRC_DIR)/main.cpp \
+		$(SRC_DIR)/ScavTrap.cpp
 
-SOURCES = Fixed.cpp main.cpp Point.cpp bsp.cpp
-HEADERS = Fixed.h Point.h
-OBJECTS = $(addprefix $(OBJDIR)/,$(SOURCES:.cpp=.o))
+OBJ = $(patsubst $(SRC_DIR)/%.cpp, $(OBJ_DIR)/%.o, $(SRC))
 
 all: $(NAME)
 
-$(OBJDIR):
-	mkdir -p $(OBJDIR)
+$(NAME): $(OBJ)
+	$(COM) $(FLAGS) $(OBJ) -I$(INC_DIR) -o $@
 
-$(NAME): $(OBJDIR) $(OBJECTS)
-	$(CXX) $(CXXFLAGS) -o $(NAME) $(OBJECTS)
+$(OBJ_DIR)/%.o: $(SRC_DIR)/%.cpp | $(OBJ_DIR)
+	$(COM) $(FLAGS) -I$(INC_DIR) -c $< -o $@
 
-$(OBJDIR)/%.o: %.cpp $(HEADERS)
-	$(CXX) $(CXXFLAGS) -c $< -o $@
+$(OBJ_DIR):
+	mkdir -p $(OBJ_DIR)
 
 clean:
-	rm -rf $(OBJDIR)
+	rm -rf $(OBJ_DIR)
 
 fclean: clean
-	rm -f $(NAME)
+	rm -rf $(NAME)
 
 re: fclean all
 
