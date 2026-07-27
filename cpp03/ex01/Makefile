@@ -1,4 +1,4 @@
-NAME = ./ClapTrap
+NAME = ./ScavTrap
 
 CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror
@@ -7,8 +7,8 @@ SRCDIR = src
 INCDIR = inc
 OBJDIR = obj
 
-SRC =	$(SRCDIR)/main.cpp $(SRCDIR)/ClapTrap.cpp
-HEADERS = $(INCDIR)/ClapTrap.h
+SRC =	$(SRCDIR)/main.cpp $(SRCDIR)/ClapTrap.cpp $(SRCDIR)/ScavTrap.cpp
+HEADERS = $(INCDIR)/ClapTrap.h $(INCDIR)/ScavTrap.h
 OBJECTS = $(patsubst $(SRCDIR)/%.cpp,$(OBJDIR)/%.o,$(SRC))
 
 all: $(NAME)
