@@ -1,33 +1,37 @@
-NAME = scavtrap
-COM = c++
-FLAGS = -Wall -Wextra -Werror 
+NAME = ./ClapTrap
 
-SRC_DIR = src
-OBJ_DIR = obj
-INC_DIR = inc
+CXX = c++
+CXXFLAGS = -Wall -Wextra -Werror
 
-SRC =	$(SRC_DIR)/main.cpp \
-		$(SRC_DIR)/ScavTrap.cpp
+SRCDIR = src
+INCDIR = inc
+OBJDIR = obj
 
-OBJ = $(patsubst $(SRC_DIR)/%.cpp, $(OBJ_DIR)/%.o, $(SRC))
+SRC =	$(SRCDIR)/main.cpp $(SRCDIR)/ClapTrap.cpp
+HEADERS = $(INCDIR)/ClapTrap.h
+OBJECTS = $(patsubst $(SRCDIR)/%.cpp,$(OBJDIR)/%.o,$(SRC))
 
 all: $(NAME)
 
-$(NAME): $(OBJ)
-	$(COM) $(FLAGS) $(OBJ) -I$(INC_DIR) -o $@
+$(OBJDIR):
+	mkdir -p $(OBJDIR)
 
-$(OBJ_DIR)/%.o: $(SRC_DIR)/%.cpp | $(OBJ_DIR)
-	$(COM) $(FLAGS) -I$(INC_DIR) -c $< -o $@
+$(NAME): $(OBJECTS)
+	$(CXX) $(CXXFLAGS) -o $(NAME) $(OBJECTS)
 
-$(OBJ_DIR):
-	mkdir -p $(OBJ_DIR)
+$(OBJDIR)/%.o: $(SRCDIR)/%.cpp $(HEADERS) | $(OBJDIR)
+	$(CXX) $(CXXFLAGS) -I$(INCDIR) -c $< -o $@
 
 clean:
-	rm -rf $(OBJ_DIR)
+	rm -rf $(OBJDIR)
 
 fclean: clean
-	rm -rf $(NAME)
+	rm -f $(NAME)
 
 re: fclean all
 
 .PHONY: all clean fclean re
+
+
+# # with -I the compiler no longer knows which headers a .cpp depends on, 
+# # so edits to a header alone won't trigger a recompile (altho make re fixes this) 
