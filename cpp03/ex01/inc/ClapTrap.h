@@ -27,8 +27,11 @@ class ClapTrap {
 		void	attack(const std::string& target);
 		void	takeDamage(int amount);
 		void	beRepaired(int amount);
+
+		const std::string&	getName() const;
+		void				setName(std::string_view name);
 	
-	private :
+	protected :
 		std::string		m_name;
 		int				m_hitPoints; // health points
 		int				m_energyPoints; // energy for doing stuff/mana (funny word)
