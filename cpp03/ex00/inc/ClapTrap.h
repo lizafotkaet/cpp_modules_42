@@ -15,7 +15,9 @@
 class ClapTrap {
 		
 	public :
-		ClapTrap(std::string_view name = ""); // name constructor
+		// ClapTrap(std::string_view name = ""); // default constructor
+		ClapTrap(std::string_view name = "", int hitPoints = 10, int energyPoints = 10,
+			int attackDamage = 0); // default constructor
 		ClapTrap(const ClapTrap& other); // copy constructor 
 		ClapTrap& operator=(const ClapTrap& other); // copy assignment operator
 		~ClapTrap();
