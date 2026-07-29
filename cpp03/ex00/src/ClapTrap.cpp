@@ -38,7 +38,7 @@ void	ClapTrap::attack(const std::string& target){
 		std::cout << "No hit points left, I'm dead :c\n";
 	}
 	else{
-		std::cout << "ClapTrap " << this->m_name << "attacks "
+		std::cout << "ClapTrap " << this->m_name << " attacks "
 					<< target << ", causing " << this->m_attackDamage
 						<< " points of damage!\n";
 		--(this->m_energyPoints);

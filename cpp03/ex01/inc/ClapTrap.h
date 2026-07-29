@@ -29,7 +29,7 @@ class ClapTrap {
 	
 	private :
 		std::string		m_name;
-		int	m_hitPoints; // health points
+		int				m_hitPoints; // health points
 		unsigned int	m_energyPoints; // energy for doing stuff/mana (funny word)
 		unsigned int	m_attackDamage; // wtf
 

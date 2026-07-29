@@ -5,8 +5,11 @@ int main() {
 	ClapTrap ct2("Bibik");
 	ClapTrap ct3(ct2);
 
-	ct1 = ct3;
+	ct1 = ct2;
 
+	for (int i = 0; i < 10; i++){
+		ct2.attack("Lupa");
+	}
 	ct2.attack("Bobik");
 	ct2.takeDamage(3);
 	ct2.takeDamage(5);

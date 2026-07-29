@@ -6,10 +6,14 @@ ClapTrap::ClapTrap(std::string_view name) :
 			this->m_name << " has been called\n" << RESET;
 }
 
-ClapTrap::ClapTrap(const ClapTrap& other) : m_name(other.m_name), m_hitPoints(other.m_hitPoints), 
-		m_energyPoints(other.m_energyPoints), m_attackDamage(other.m_attackDamage){
-	std::cout << LIGHTBLUE << "ClapTrap Copy constructor for " <<
-			this->m_name << " has been called\n" << RESET;
+// ClapTrap::ClapTrap(const ClapTrap& other) : m_name(other.m_name), m_hitPoints(other.m_hitPoints), 
+// 		m_energyPoints(other.m_energyPoints), m_attackDamage(other.m_attackDamage){
+// 	std::cout << LIGHTBLUE << "ClapTrap Copy constructor for " <<
+// 			this->m_name << " has been called\n" << RESET;
+// }
+
+ClapTrap::ClapTrap(const ClapTrap&other){
+	*this = other;
 }
 
 ClapTrap& ClapTrap::operator=(const ClapTrap& other){
