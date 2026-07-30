@@ -1,0 +1,10 @@
+1. FIX ALL CONSTRUCTORS IN ALL EXERCISES!!! (ONLY NAME AS THE PARAMETER, THE INITIAL STATS ARE HARDCODED)
+2. takeDamage/beRepaired - int/unsigned int:
+
+if (amount >= static_cast<unsigned int>(this->m_hitPoints)) {
+    std::cout << "I died :C\n";
+    this->m_hitPoints = 0;
+} else
+    this->m_hitPoints -= amount;
+
+(same for beRepaired - clamp against INT_MAX - m_hitPoints, or against a max-HP constant if you'd rather cap healing — right now Funtik heals to 109/100)

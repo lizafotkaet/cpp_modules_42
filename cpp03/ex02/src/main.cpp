@@ -1,4 +1,5 @@
 #include "ScavTrap.h"
+#include "FragTrap.h"
 
 int main() {
 
@@ -37,6 +38,24 @@ int main() {
 		st2.takeDamage(3);
 
 		st3.guardGate();
+	}
+
+	std::cout << "\n*__________FRAGTRAP_________*\n\n";
+
+	{
+		FragTrap	ft1;
+		FragTrap	ft2("Funtik");
+		FragTrap	ft3(ft2);
+
+		ft1 = ft3;
+
+		ft2.attack("Bobik");
+		ft2.takeDamage(11);
+		ft2.takeDamage(2);
+		ft2.beRepaired(22);
+		ft2.takeDamage(2);
+
+		ft3.highFivesGuys();
 	}
 
 	return (0);
