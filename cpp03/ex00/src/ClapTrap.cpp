@@ -31,7 +31,8 @@ ClapTrap& ClapTrap::operator=(const ClapTrap& other){
 }
 
 ClapTrap::~ClapTrap(){
-	std::cout << RED << "ClapTrap Destructor called\n" << RESET;
+	std::cout << RED << "ClapTrap Destructor for " <<
+			this->m_name << " has been called\n" << RESET;
 }
 
 //--------------------------------------------------------------//

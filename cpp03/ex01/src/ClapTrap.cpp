@@ -25,7 +25,8 @@ ClapTrap& ClapTrap::operator=(const ClapTrap& other){
 }
 
 ClapTrap::~ClapTrap(){
-	std::cout << RED << "ClapTrap Destructor called\n" << RESET;
+	std::cout << RED << "ClapTrap Destructor for " <<
+			this->m_name << " has been called\n" << RESET;
 }
 
 //--------------------------------------------------------------//
@@ -80,3 +81,11 @@ void	ClapTrap::beRepaired(unsigned int amount){
 	std::cout << PINK << "Current stats: \nHP: " << this->m_hitPoints <<
 		"\nEP: " << this->m_energyPoints << '\n' << RESET;
 }
+
+// void	ClapTrap::setName(std::string_view name){
+// 	this->m_name = name;
+// }
+
+// const std::string&	ClapTrap::getName() const{
+// 	return this->m_name;
+// }
