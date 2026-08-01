@@ -1,9 +1,8 @@
 #pragma once
 
-#include <iostream>
 #include "ClapTrap.h"
 
-class ScavTrap : public ClapTrap {
+class ScavTrap : virtual public ClapTrap {
 	
 	public:
 		ScavTrap(std::string_view name = "<default>"); // default constructor 100 50 20

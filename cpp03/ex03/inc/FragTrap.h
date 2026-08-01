@@ -2,7 +2,7 @@
 
 #include "ClapTrap.h"
 
-class FragTrap : public ClapTrap {
+class FragTrap : virtual public ClapTrap {
 	
 	public:
 		FragTrap(std::string_view name = "<default>"); // default constructor 100 100 30

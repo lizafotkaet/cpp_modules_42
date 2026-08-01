@@ -58,5 +58,9 @@ int main() {
 		ft3.highFivesGuys();
 	}
 
+	std::cout << "\n*__________DIAMONDTRAP_________*\n\n";
+
+	
+
 	return (0);
 }
