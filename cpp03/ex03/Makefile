@@ -1,7 +1,7 @@
 NAME = ./DiamondTrap
 
 CXX = c++
-CXXFLAGS = -Wall -Wextra -Werror #-Wshadow #-Wnoshadow
+CXXFLAGS = -Wall -Wextra -Werror -std=c++17 #-Wshadow #-Wnoshadow
 
 SRCDIR = src
 INCDIR = inc

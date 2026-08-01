@@ -30,10 +30,10 @@ class ClapTrap {
 		// void				setName(std::string_view name);
 	
 	protected :
-		ClapTrap(std::string_view name, int hp, int ep, int ad);
+		ClapTrap(std::string_view name, int hp, int ep, int ad); // for derived classes
 		std::string		m_name;
-		int				m_hitPoints; // health points
-		int				m_energyPoints; // energy for doing stuff/mana (funny word)
-		int				m_attackDamage; // wtf
+		unsigned int	m_hitPoints; // health points
+		unsigned int	m_energyPoints; // energy for doing stuff/mana (funny word)
+		unsigned int	m_attackDamage; // wtf
 };
 

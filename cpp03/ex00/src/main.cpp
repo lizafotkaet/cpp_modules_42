@@ -14,7 +14,7 @@ int main() {
 	ct2.takeDamage(3);
 	ct2.takeDamage(5);
 	ct2.beRepaired(1);
-	ct2.takeDamage(3);
+	ct2.takeDamage(2);
 
 	return (0);
 }
