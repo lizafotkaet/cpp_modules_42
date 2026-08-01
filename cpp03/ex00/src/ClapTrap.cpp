@@ -1,13 +1,6 @@
 #include "ClapTrap.h"
 
-// ClapTrap::ClapTrap(std::string_view name) :
-// 		m_name(name), m_hitPoints(10), m_energyPoints(10), m_attackDamage(0){
-// 	std::cout << GREEN << "ClapTrap Default constructor for " <<
-// 			this->m_name << " has been called\n" << RESET;
-// }
-
-ClapTrap::ClapTrap(std::string_view name, int hitPoints, int energyPoints, int attackDamage) : 
-		m_name(name), m_hitPoints(hitPoints), m_energyPoints(energyPoints), m_attackDamage(attackDamage){
+ClapTrap::ClapTrap(std::string_view name) : m_name(name), m_hitPoints(10), m_energyPoints(10), m_attackDamage(0){
 	std::cout << GREEN << "ClapTrap Default constructor for " <<
 			this->m_name << " has been called\n" << RESET;
 }

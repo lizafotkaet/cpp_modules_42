@@ -6,8 +6,7 @@
 class ScavTrap : public ClapTrap {
 	
 	public:
-		ScavTrap(std::string_view name = "<default>", int hitPoints = 100, 
-				int energyPoints = 50, int attackDamage = 20); // default constructor
+		ScavTrap(std::string_view name = "<default>"); // default constructor 100 50 20
 		ScavTrap(const ScavTrap& other);
 		ScavTrap& operator=(const ScavTrap& other);
 		~ScavTrap();

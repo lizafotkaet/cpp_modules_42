@@ -1,7 +1,6 @@
 #include "ScavTrap.h"
 
-ScavTrap::ScavTrap(std::string_view name, int hitPoints, int energyPoints, int attackDamage) : 
-			ClapTrap(name, hitPoints, energyPoints, attackDamage) {
+ScavTrap::ScavTrap(std::string_view name) : ClapTrap(name, 100, 50, 20) {
 	std::cout << GREEN << "ScavTrap Default constructor for " <<
 			this->m_name << " has been called" << RESET << std::endl;
 }
