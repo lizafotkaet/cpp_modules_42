@@ -1,12 +1,12 @@
 #include "WrongAnimal.h"
 
-WrongAnimal::WrongAnimal() {
+WrongAnimal::WrongAnimal() : m_type("<metaWrong>") {
 	std::cout << GREEN << "WrongAnimal default constructor called\n" << RESET;
 }
 
 // for inheritance only
 
-WrongAnimal::WrongAnimal(std::string_view type) : m_type(type){
+WrongAnimal::WrongAnimal(const std::string& type) : m_type(type){
 	std::cout << GREEN << "WrongAnimal protected constructor called\n" << RESET;
 }
 
@@ -16,7 +16,7 @@ WrongAnimal::WrongAnimal(const WrongAnimal& other) : m_type(other.m_type){
 
 WrongAnimal& WrongAnimal::operator=(const WrongAnimal& other){
 	if (this != &other){
-		WrongAnimal::operator=(other);
+		m_type = other.m_type;
 	}
 	std::cout << YELLOW << "WrongAnimal copy assignment operator called\n" << RESET;
 	return *this;
@@ -30,6 +30,6 @@ void WrongAnimal::makeSound() const{
 	std::cout << "*generic wrong animal sound*\n";
 };
 
-void	WrongAnimal::getType() const{
-	std::cout << "Type of wrong animal: " << this->m_type << '\n';
+const std::string&	WrongAnimal::getType() const{
+	return this->m_type;
 }

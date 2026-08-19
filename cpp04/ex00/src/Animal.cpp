@@ -1,12 +1,12 @@
 #include "Animal.h"
 
-Animal::Animal() : m_type("<default>") {
+Animal::Animal() : m_type("<meta>") {
 	std::cout << GREEN << "Animal default constructor called\n" << RESET;
 }
 
 // for inheritance only
 
-Animal::Animal(std::string_view type) : m_type(type){
+Animal::Animal(const std::string& type) : m_type(type){
 	std::cout << GREEN << "Animal protected constructor called\n" << RESET;
 }
 
@@ -30,6 +30,6 @@ void Animal::makeSound() const{
 	std::cout << "*generic animal sound*\n";
 };
 
-std::string	Animal::getType() const{
+const std::string&	Animal::getType() const{
 	return this->m_type;
 }

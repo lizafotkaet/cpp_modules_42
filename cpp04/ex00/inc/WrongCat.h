@@ -10,4 +10,7 @@ class WrongCat : public WrongAnimal{
 		~WrongCat();
 
 		void	makeSound() const;
+	private : 
+		std::string m_sTest;
+		int* m_numTest;
 };

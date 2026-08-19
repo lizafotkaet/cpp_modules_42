@@ -1,15 +1,17 @@
-NAME = ./DiamondTrap
+NAME = ./Polymorphism
 
 CXX = c++
-CXXFLAGS = -Wall -Wextra -Werror -std=c++17 #-Wshadow #-Wnoshadow
+CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
 SRCDIR = src
 INCDIR = inc
 OBJDIR = obj
 
-SRC =	$(SRCDIR)/main.cpp $(SRCDIR)/ClapTrap.cpp $(SRCDIR)/ScavTrap.cpp $(SRCDIR)/FragTrap.cpp \
-			$(SRCDIR)/DiamondTrap.cpp
-HEADERS = $(INCDIR)/ClapTrap.h $(INCDIR)/ScavTrap.h $(INCDIR)/FragTrap.h $(INCDIR)/DiamondTrap.h
+FILES = main.cpp Animal.cpp WrongAnimal.cpp Cat.cpp WrongCat.cpp Dog.cpp
+HDRS = Animal.h Cat.h Dog.h WrongAnimal.h WrongCat.h
+
+SRC = $(addprefix $(SRCDIR)/, $(FILES))
+HEADERS = $(addprefix $(INCDIR)/, $(HDRS))
 OBJECTS = $(patsubst $(SRCDIR)/%.cpp,$(OBJDIR)/%.o,$(SRC))
 
 all: $(NAME)

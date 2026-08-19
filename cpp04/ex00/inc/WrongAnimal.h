@@ -2,7 +2,6 @@
 
 #include <iostream>
 #include <string>
-#include <string_view>
 
 #define GREEN "\033[32m"
 #define RED "\033[31m"
@@ -21,9 +20,9 @@ class WrongAnimal{
 		~WrongAnimal();
 
 		void makeSound() const;
-		void	getType() const;
+		const std::string&	getType() const;
 
 	protected :
 		std::string	m_type;
-		WrongAnimal(std::string_view type);
+		WrongAnimal(const std::string& type);
 };
