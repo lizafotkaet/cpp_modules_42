@@ -1,56 +1,36 @@
 #include <iostream>
-#include <string>
-#include <string_view>
-
-#define GREEN "\033[32m"
-#define RED "\033[31m"
-#define LIGHTBLUE "\033[94m"
-#define YELLOW "\033[33m"
-#define PINK "\033[95m"
-#define RESET "\033[0m"
-
-class Person
+class Base
 {
 public:
-    std::string m_name{};
-    int m_age{};
-
-    Person(std::string_view name = "", int age = 0)
-        : m_name{name}, m_age{age}
+    virtual ~Base() // note: not virtual
     {
-        std::cout << YELLOW << "Person constructor called\n" << RESET;
+        std::cout << "Calling ~Base()\n";
     }
-
-    const std::string& getName() const { return m_name; }
-    int getAge() const { return m_age; }
-
 };
 
-// Employee publicly inherits from Person
-class Employee: public Person
+class Derived: public Base
 {
-public:
-    double m_hourlySalary{};
-    long m_employeeID{};
+private:
+    int* m_array {};
 
-    Employee(double hourlySalary = 0.0, long employeeID = 0)
-        : m_hourlySalary{hourlySalary}, m_employeeID{employeeID}
+public:
+    Derived(int length)
+      : m_array{ new int[length] }
     {
-        std::cout << LIGHTBLUE << "Employee constructor called\n" << RESET;
     }
 
-    void printNameAndSalary() const
+    ~Derived() override // note: not virtual (your compiler may warn you about this)
     {
-        std::cout << m_name << ": " << m_hourlySalary << '\n';
+        std::cout << "Calling ~Derived()\n";
+        delete[] m_array;
     }
 };
 
 int main()
 {
-    Employee frank{20.25, 12345};
-    frank.m_name = "Frank"; // we can do this because m_name is public
+    Derived* derived { new Derived(5) };
+    Base* base { derived };
 
-    frank.printNameAndSalary();
-
+    delete base;
     return 0;
 }
