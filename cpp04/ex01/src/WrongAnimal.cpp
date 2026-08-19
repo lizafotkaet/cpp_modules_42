@@ -28,7 +28,7 @@ WrongAnimal::~WrongAnimal(){
 
 void WrongAnimal::makeSound() const{
 	std::cout << "*generic wrong animal sound*\n";
-}
+};
 
 const std::string&	WrongAnimal::getType() const{
 	return this->m_type;

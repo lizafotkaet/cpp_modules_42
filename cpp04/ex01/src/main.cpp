@@ -31,7 +31,6 @@ int main()
 	
 	std::cout << PINK << "\n --------WrongAnimal test-------- \n\n" << RESET;
 	
-	std::cout << "Constructing the wrong animal:\n";
 	const WrongAnimal* metaW = new WrongAnimal();
 	std::cout << "Constructing the wrong cat:\n";
 	const WrongAnimal* kitty = new WrongCat();
@@ -47,18 +46,18 @@ int main()
 	std::cout << "Destroying the wrong cat:\n";
 	delete kitty;
 	
-	// std::cout << PINK << "\n --------Copy constructors/assignment operator tests-------- \n\n" << RESET;
+	std::cout << PINK << "\n --------Copy constructors/assignment operator tests-------- \n\n" << RESET;
 
-	// std::cout << "For cats:\n";
-	// Cat	fluffy;
-	// Cat	furs(fluffy);
-	// Cat	bells;
-	// fluffy = bells;
-	// std::cout << "For dogs:\n";
-	// Dog	hatiko;
-	// Dog	barks;
-	// Dog	beethoven(hatiko);
-	// hatiko = barks;
+	std::cout << "For cats:\n";
+	Cat	fluffy;
+	Cat	furs(fluffy);
+	Cat	bells;
+	fluffy = bells;
+	std::cout << "For dogs:\n";
+	Dog	hatiko;
+	Dog	barks;
+	Dog	beethoven(hatiko);
+	hatiko = barks;
 
 
     return 0;

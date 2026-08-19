@@ -22,4 +22,4 @@ Dog::~Dog(){
 
 void Dog::makeSound() const{
 	std::cout << "*woof woof*\n";
-}
+};
