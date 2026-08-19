@@ -1,6 +1,7 @@
 #pragma once
 
 #include "Animal.h"
+#include "Brain.h"
 
 class Dog : public Animal{
 	public : 
@@ -10,4 +11,7 @@ class Dog : public Animal{
 		~Dog();
 
 		void	makeSound() const;
+	
+	private :
+		Brain*	brain;
 };

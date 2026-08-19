@@ -1,6 +1,6 @@
 #include "Cat.h"
 
-Cat::Cat() : Animal("cat") {
+Cat::Cat() : Animal("cat"), brain(new Brain()) {
 	std::cout << GREEN << "Cat default constructor called\n" << RESET;
 }
 

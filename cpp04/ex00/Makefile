@@ -1,7 +1,7 @@
 NAME = ./Polymorphism
 
 CXX = c++
-CXXFLAGS = -Wall -Wextra -Werror -std=c++98
+CXXFLAGS = -Wall -Wextra -Werror
 
 SRCDIR = src
 INCDIR = inc
