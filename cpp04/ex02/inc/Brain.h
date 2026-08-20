@@ -2,10 +2,9 @@
 
 #include <iostream>
 #include <string>
-#include <array>
 #include "colors.h"
 
-#define SIZE 100
+#define SIZE_ARR 100
 
 class Brain{
 	public :
@@ -14,9 +13,9 @@ class Brain{
 		Brain& operator=(const Brain& other);
 		~Brain();
 
-		std::string getIdea(int i) const;
-		void			setIdea(int i, const std::string& idea);
+		std::string	getIdea(int i) const;
+		void		setIdea(int i, const std::string& idea);
 	
 	private :
-		std::array<std::string, SIZE>	m_ideas;
+		std::string	m_ideas[SIZE_ARR];
 };
