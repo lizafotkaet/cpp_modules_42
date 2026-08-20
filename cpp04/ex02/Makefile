@@ -1,14 +1,14 @@
 NAME = ./Abstract
 
 CXX = c++
-CXXFLAGS = -Wall -Wextra -Werror -std=c++98
+CXXFLAGS = -Wall -Wextra -Werror -std=c++17
 
 SRCDIR = src
 INCDIR = inc
 OBJDIR = obj
 
-FILES = main.cpp Animal.cpp WrongAnimal.cpp Cat.cpp WrongCat.cpp Dog.cpp
-HDRS = Animal.h Cat.h Dog.h WrongAnimal.h WrongCat.h
+FILES = main.cpp AAnimal.cpp WrongAnimal.cpp Cat.cpp WrongCat.cpp Dog.cpp Brain.cpp
+HDRS = AAnimal.h Cat.h Dog.h WrongAnimal.h WrongCat.h Brain.h
 
 SRC = $(addprefix $(SRCDIR)/, $(FILES))
 HEADERS = $(addprefix $(INCDIR)/, $(HDRS))
@@ -37,4 +37,4 @@ re: fclean all
 
 
 # # with -I the compiler no longer knows which headers a .cpp depends on, 
-# # so edits to a header alone won't trigger a recompile (altho make re fixes this) 
+# # so edits to a header alone won't trigger a recompile (altho make re fixes this)

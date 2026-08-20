@@ -1,16 +1,16 @@
 #include "Dog.h"
 
-Dog::Dog() : Animal("dog"), m_brain(new Brain()) {
+Dog::Dog() : AAnimal("dog"), m_brain(new Brain()) {
 	std::cout << GREEN << "Dog default constructor called\n" << RESET;
 }
 
-Dog::Dog(const Dog& other) : Animal(other), m_brain(new Brain(*other.m_brain)){
+Dog::Dog(const Dog& other) : AAnimal(other), m_brain(new Brain(*other.m_brain)){
 	std::cout << LIGHTBLUE << "Dog copy constructor called\n" << RESET;
 }
 
 Dog& Dog::operator=(const Dog& other){
 	if (this != &other){
-		Animal::operator=(other);
+		AAnimal::operator=(other);
 		*this->m_brain = *other.m_brain;
 	}
 	std::cout << YELLOW << "Dog copy assignment operator called\n" << RESET;

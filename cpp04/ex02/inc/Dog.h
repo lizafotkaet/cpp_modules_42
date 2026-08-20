@@ -1,20 +1,20 @@
 #pragma once
 
-#include "Animal.h"
+#include "AAnimal.h"
 #include "Brain.h"
 
-class Cat : public Animal{
-	public :
-		Cat();
-		Cat(const Cat& other);
-		Cat& operator=(const Cat& other);
-		~Cat() override;
+class Dog : public AAnimal{
+	public : 
+		Dog();
+		Dog(const Dog& other);
+		Dog& operator=(const Dog& other);
+		~Dog() override;
 
 		void	makeSound() const override;
 
 		void		setIdea(int i, const std::string& idea);
 		std::string	getIdea(int i) const;
-
+	
 	private :
 		Brain*	m_brain;
 };

@@ -1,17 +1,17 @@
 #include "Cat.h"
 
-Cat::Cat() : Animal("cat"), m_brain(new Brain()) {
+Cat::Cat() : AAnimal("cat"), m_brain(new Brain()) {
 	std::cout << GREEN << "Cat default constructor called\n" << RESET;
 }
 
-Cat::Cat(const Cat& other) : Animal(other), m_brain(new Brain(*other.m_brain)){
+Cat::Cat(const Cat& other) : AAnimal(other), m_brain(new Brain(*other.m_brain)){
 	std::cout << LIGHTBLUE << "Cat copy constructor called\n" << RESET;
 
 }
 
 Cat& Cat::operator=(const Cat& other){
 	if (this != &other){
-		Animal::operator=(other);
+		AAnimal::operator=(other);
 		*this->m_brain = *other.m_brain;
 	}
 	std::cout << YELLOW << "Cat copy assignment operator called\n" << RESET;
