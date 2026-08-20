@@ -8,10 +8,13 @@ class Dog : public Animal{
 		Dog();
 		Dog(const Dog& other);
 		Dog& operator=(const Dog& other);
-		~Dog();
+		~Dog() override;
 
-		void	makeSound() const;
+		void	makeSound() const override;
+
+		void		setIdea(int i, const std::string& idea);
+		std::string	getIdea(int i) const;
 	
 	private :
-		Brain*	brain;
+		Brain*	m_brain;
 };

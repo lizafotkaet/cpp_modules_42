@@ -8,9 +8,13 @@ class Cat : public Animal{
 		Cat();
 		Cat(const Cat& other);
 		Cat& operator=(const Cat& other);
-		~Cat();
+		~Cat() override;
 
-		void	makeSound() const;
+		void	makeSound() const override;
+
+		void		setIdea(int i, const std::string& idea);
+		std::string	getIdea(int i) const;
+
 	private :
-		Brain*	brain;
+		Brain*	m_brain;
 };

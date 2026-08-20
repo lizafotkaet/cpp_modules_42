@@ -1,14 +1,14 @@
-NAME = ./Polymorphism
+NAME = ./Array
 
 CXX = c++
-CXXFLAGS = -Wall -Wextra -Werror -std=c++98
+CXXFLAGS = -std=c++17 -Wall -Wextra -Werror
 
 SRCDIR = src
 INCDIR = inc
 OBJDIR = obj
 
-FILES = main.cpp Animal.cpp WrongAnimal.cpp Cat.cpp WrongCat.cpp Dog.cpp
-HDRS = Animal.h Cat.h Dog.h WrongAnimal.h WrongCat.h
+FILES = main.cpp Animal.cpp WrongAnimal.cpp Cat.cpp WrongCat.cpp Dog.cpp Brain.cpp
+HDRS = Animal.h Cat.h Dog.h WrongAnimal.h WrongCat.h Brain.h colors.h
 
 SRC = $(addprefix $(SRCDIR)/, $(FILES))
 HEADERS = $(addprefix $(INCDIR)/, $(HDRS))
