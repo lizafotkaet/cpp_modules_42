@@ -1,4 +1,4 @@
-NAME = ./Array
+NAME = ./Brain
 
 CXX = c++
 CXXFLAGS = -std=c++17 -Wall -Wextra -Werror
