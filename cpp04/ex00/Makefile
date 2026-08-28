@@ -8,7 +8,7 @@ INCDIR = inc
 OBJDIR = obj
 
 FILES = main.cpp Animal.cpp WrongAnimal.cpp Cat.cpp WrongCat.cpp Dog.cpp
-HDRS = Animal.h Cat.h Dog.h WrongAnimal.h WrongCat.h colors.h
+HDRS = Animal.h Cat.h Dog.h WrongAnimal.h WrongCat.h
 
 SRC = $(addprefix $(SRCDIR)/, $(FILES))
 HEADERS = $(addprefix $(INCDIR)/, $(HDRS))

@@ -7,7 +7,7 @@ Brain::Brain() {
 	}
 }
 
-Brain::Brain(const Brain& other) : m_ideas(other.m_ideas){
+Brain::Brain(const Brain& other){
 	std::cout << LIGHTBLUE << "Brain copy constructor called\n" << RESET;
 	for (int i = 0; i < SIZE_ARR; i++){
 		this->m_ideas[i] = other.m_ideas[i];
