@@ -7,9 +7,6 @@
 
 #include "colors.h"
 
-#define HIGHEST_GRADE 1
-#define LOWEST_GRADE 150
-
 /*
 Any attempt to instantiate a Bureaucrat with an invalid grade must throw an exception:
 either a Bureaucrat::GradeTooHighException or a Bureaucrat::GradeTooLowException.
@@ -36,6 +33,9 @@ class Bureaucrat{
 			public :
 				const char *what() const noexcept;
 		};
+
+		static constexpr int lowestGrade{150};
+		static constexpr int highestGrade{1};
 
 	private :
 		const std::string	m_name;

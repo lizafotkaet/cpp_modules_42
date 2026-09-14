@@ -1,10 +1,10 @@
 #include "Bureaucrat.h"
 
 Bureaucrat::Bureaucrat(std::string_view name, int grade) : m_name(name) {
-	if (grade < HIGHEST_GRADE){
+	if (grade < highestGrade){
 		throw Bureaucrat::GradeTooHighException();
 	}
-	if (grade > LOWEST_GRADE){
+	if (grade > lowestGrade){
 		throw Bureaucrat::GradeTooLowException();
 	}
 	m_grade = grade;
@@ -29,17 +29,17 @@ Bureaucrat& Bureaucrat::operator=(const Bureaucrat& other){
 }
 
 void	Bureaucrat::incGrade(){
-	--m_grade;
-	if (m_grade < HIGHEST_GRADE){
+	if (m_grade - 1 < highestGrade){
 		throw Bureaucrat::GradeTooHighException();
 	}
+	--m_grade;
 }
 
 void	Bureaucrat::decGrade(){
-	++m_grade;
-	if (m_grade > LOWEST_GRADE){
+	if (m_grade + 1 > lowestGrade){
 		throw Bureaucrat::GradeTooLowException();
 	}
+	++m_grade;
 }
 
 // exceptions:

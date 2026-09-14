@@ -8,7 +8,7 @@ INCDIR = inc
 OBJDIR = obj
 
 FILES = main.cpp Bureaucrat.cpp
-HDRS = Bureaucrat.h
+HDRS = Bureaucrat.h colors.h
 
 SRC = $(addprefix $(SRCDIR)/, $(FILES))
 HEADERS = $(addprefix $(INCDIR)/, $(HDRS))
