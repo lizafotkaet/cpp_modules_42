@@ -10,11 +10,11 @@ class Cat : public Animal{
 		Cat& operator=(const Cat& other);
 		~Cat() override;
 
-		void	makeSound() const override;
+		void		makeSound() const override;
 
 		void		setIdea(int i, const std::string& idea);
 		std::string	getIdea(int i) const;
 
 	private :
-		Brain*	m_brain;
+		Brain*		m_brain;
 };

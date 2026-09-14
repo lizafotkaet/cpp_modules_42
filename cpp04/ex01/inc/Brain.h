@@ -14,7 +14,7 @@ class Brain{
 		~Brain();
 
 		std::string getIdea(int i) const;
-		void			setIdea(int i, const std::string& idea);
+		void		setIdea(int i, const std::string& idea);
 	
 	private :
 		std::string	m_ideas[SIZE_ARR];

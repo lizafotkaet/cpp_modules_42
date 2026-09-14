@@ -13,10 +13,10 @@ class WrongAnimal{
 		WrongAnimal& operator=(const WrongAnimal& other);
 		~WrongAnimal();
 
-		void makeSound() const;
+		void 				makeSound() const;
 		const std::string&	getType() const;
 
 	protected :
-		std::string	m_type;
+		std::string			m_type;
 		WrongAnimal(const std::string& type);
 };

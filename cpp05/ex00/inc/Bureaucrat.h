@@ -2,8 +2,14 @@
 
 #include <iostream>
 #include <string>
+#include <exception>
+#include <string_view>
+#include <optional>
+
 #include "colors.h"
 
+#define HIGHEST_GRADE 1
+#define LOWEST_GRADE 150
 
 /*
 Any attempt to instantiate a Bureaucrat with an invalid grade must throw an exception:
@@ -12,14 +18,29 @@ either a Bureaucrat::GradeTooHighException or a Bureaucrat::GradeTooLowException
 
 class Bureaucrat{
 	public	:
+		Bureaucrat(std::string_view name = "<default>", int grade = 150);
+		Bureaucrat(const Bureaucrat& other);
+		Bureaucrat& operator=(const Bureaucrat& other);
+		~Bureaucrat();
+
 		const std::string&	getName() const;
-		unsigned int		getGrade() const;
-		void				inc(unsigned int grade);
-		void				dec(unsigned int grade);
+		int					getGrade() const;
+		void				incGrade();
+		void				decGrade();
+
+		class GradeTooHighException : public std::exception {
+			public :
+				const char *what() const noexcept;
+		};
+
+		class GradeTooLowException : public std::exception {
+			public :
+				const char *what() const noexcept;
+		};
 
 	private :
 		const std::string	m_name;
-		unsigned int		m_grade;
+		int		m_grade;
 };
 
-std::ostream& operator<<(std::ostream& out, const Bureaucrat& bureacrat); // <name>, bureaucrat grade <grade>
+std::ostream& operator<<(std::ostream& out, const Bureaucrat& bureaucrat); // <name>, bureaucrat grade <grade>

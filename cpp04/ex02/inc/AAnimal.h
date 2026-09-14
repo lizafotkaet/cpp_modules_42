@@ -13,11 +13,11 @@ class AAnimal{
 		AAnimal& operator=(const AAnimal& other);
 		virtual ~AAnimal();
 	
-		virtual void makeSound() const = 0; // pure virtual function
+		virtual void 		makeSound() const = 0; // pure virtual function
 		const std::string&	getType() const;
 	
 	protected :
 		AAnimal();
-		std::string	m_type;
+		std::string			m_type;
 		AAnimal(const std::string& type);
 };
