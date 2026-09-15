@@ -6,6 +6,7 @@
 #include <string_view>
 
 #include "colors.h"
+#include "Form.h"
 
 /*
 Any attempt to instantiate a Bureaucrat with an invalid grade must throw an exception:
@@ -24,6 +25,8 @@ class Bureaucrat{
 		void				incGrade();
 		void				decGrade();
 
+		void				signForm(Form& f);
+
 		class GradeTooHighException : public std::exception {
 			public :
 				const char *what() const noexcept override;
@@ -39,7 +42,7 @@ class Bureaucrat{
 
 	private :
 		const std::string	m_name;
-		int					m_grade;
+		int		m_grade;
 };
 
 std::ostream& operator<<(std::ostream& out, const Bureaucrat& bureaucrat); // <name>, bureaucrat grade <grade>

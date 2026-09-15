@@ -1,0 +1,14 @@
+mv file.txt /path/to/dest/              # move a file
+mv file.txt /path/to/dest/newname.txt   # move + rename
+mv dir1/ /path/to/dest/                 # move a directory
+mv *.txt /path/to/dest/                 # move by glob
+mv -i src dest                          # prompt before overwriting
+mv -n src dest                          # never overwrite
+mv -v src dest                          # verbose (show what moved)
+mv -t /path/to/dest/ file1 file2        # target dir first (handy with xargs)
+
+cp file.txt /path/to/dest/              # copy a file
+cp -r dir1/ /path/to/dest/              # copy a directory recursively
+cp -a dir1/ /path/to/dest/              # archive: preserves perms, times, links
+cp -u src dest                          # only if source is newer
+
