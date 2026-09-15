@@ -2,6 +2,8 @@
 
 #include "Bureaucrat.h"
 
+class Bureaucrat;
+
 class Form{
 	public :
 		Form(std::string_view name = "<default>", int signGrade = 1, int execGrade = 1);

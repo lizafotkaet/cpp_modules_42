@@ -13,6 +13,8 @@ Any attempt to instantiate a Bureaucrat with an invalid grade must throw an exce
 either a Bureaucrat::GradeTooHighException or a Bureaucrat::GradeTooLowException.
 */
 
+class Form;
+
 class Bureaucrat{
 	public	:
 		Bureaucrat(std::string_view name = "<default>", int grade = 150);
@@ -25,7 +27,7 @@ class Bureaucrat{
 		void				incGrade();
 		void				decGrade();
 
-		void				signForm(Form& f);
+		void				signForm(Form& form);
 
 		class GradeTooHighException : public std::exception {
 			public :

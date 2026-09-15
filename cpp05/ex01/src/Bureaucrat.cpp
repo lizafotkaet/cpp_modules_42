@@ -1,4 +1,5 @@
 #include "Bureaucrat.h"
+#include "Form.h"
 
 Bureaucrat::Bureaucrat(std::string_view name, int grade) : m_name(name) {
 	if (grade < highestGrade){
@@ -51,11 +52,15 @@ Otherwise, it will print something like:
 <bureaucrat> couldn’t sign <form> because <reason>.
 */
 
-void	Bureaucrat::signForm(Form& f){
+void	Bureaucrat::signForm(Form& form){
+
 	try{
-		f.beSigned()
+		form.beSigned(*this);
 	}
-	
+	catch(std::exception& e){
+		std::cout << m_name << " coudln't sign " << form.getName() << " because " << what();
+	}
+	std::cout << m_name << " signed " << form.getName();
 }
 
 // exceptions:
