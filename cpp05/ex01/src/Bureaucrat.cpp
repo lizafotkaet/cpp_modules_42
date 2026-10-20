@@ -82,9 +82,9 @@ void	Bureaucrat::signForm(Form& form){
 		form.beSigned(*this);
 	}
 	catch(std::exception& e){
-		std::cout << m_name << " coudln't sign " << form.getName() << " because " << e.what();
+		std::cout << m_name << " coudln't sign " << form.getName() << " because " << e.what() << '\n';
 	}
-	std::cout << m_name << " signed " << form.getName();
+	std::cout << m_name << " signed " << form.getName() << '\n';
 }
 
 // insertion operator overload: 
