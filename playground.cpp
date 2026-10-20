@@ -1,42 +1,21 @@
-using namespace std;
 #include <iostream>
+#include <vector>
+#include <algorithm>
+using namespace std;
 
-class Base
-{
-public:
-    Base() {}
-	virtual ~Base() {}
+int main(){
+	  std::vector<int> v = {1,2,3,4,5,6,7,8,9};
 
-	virtual void err() const{
-		cerr << "Base error\n";
+	for (int b : v){
+		cout << b << " ";
 	}
-};
 
-class Derived: public Base
-{
-public:
-    Derived() {}
-	~Derived() override {}
+	cout << "\n";
 
-	void err() const override{
-		cerr << "Derived error\n";
+	  swap(v[0], v[3]);
+	for (int b : v){
+		cout << b << " ";
 	}
-};
-
-int main()
-{
-    try
-    {
-        throw Derived();
-    }
-    catch (const Base& base)
-    {
-        base.err();
-    }
-    // catch (const Derived& derived)
-    // {
-    //     derived.err();
-    // }
-
-    return 0;
+	cout << "\n";
+	  return 0;
 }

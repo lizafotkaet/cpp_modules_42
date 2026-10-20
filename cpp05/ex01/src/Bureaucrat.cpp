@@ -43,27 +43,9 @@ void	Bureaucrat::decGrade(){
 	++m_grade;
 }
 
-/*
 
-This function must call Form::beSigned() to attempt to sign the form. If the form is signed successfully, it
-will print something like:
-<bureaucrat> signed <form>
-Otherwise, it will print something like:
-<bureaucrat> couldn’t sign <form> because <reason>.
-*/
 
-void	Bureaucrat::signForm(Form& form){
-
-	try{
-		form.beSigned(*this);
-	}
-	catch(std::exception& e){
-		std::cout << m_name << " coudln't sign " << form.getName() << " because " << what();
-	}
-	std::cout << m_name << " signed " << form.getName();
-}
-
-// exceptions:
+// -------------- EXCEPTIONS --------------------- //
 
 const char* Bureaucrat::GradeTooHighException::what() const noexcept{
 	return "Grade too high";
@@ -83,10 +65,32 @@ int		Bureaucrat::getGrade() const{
 	return this->m_grade;
 }
 
+// ----------- signForm method ------------------ //
+/*
+
+This function must call Form::beSigned() to attempt to sign the form. 
+If the form is signed successfully, it
+will print something like:
+<bureaucrat> signed <form>
+Otherwise, it will print something like:
+<bureaucrat> couldn’t sign <form> because <reason>.
+*/
+
+void	Bureaucrat::signForm(Form& form){
+
+	try{
+		form.beSigned(*this);
+	}
+	catch(std::exception& e){
+		std::cout << m_name << " coudln't sign " << form.getName() << " because " << e.what();
+	}
+	std::cout << m_name << " signed " << form.getName();
+}
+
 // insertion operator overload: 
 
 std::ostream& operator<<(std::ostream& out, const Bureaucrat& bureacrat){
 	out << bureacrat.getName() << ", bureaucrat grade " << bureacrat.getGrade();
-
+	
 	return out;
 }

@@ -39,12 +39,12 @@ class Bureaucrat{
 				const char *what() const noexcept override;
 		};
 
-		static constexpr int lowestGrade{150};
-		static constexpr int highestGrade{1};
+		static const int 	lowestGrade{150};
+		static const int 	highestGrade{1};
 
 	private :
 		const std::string	m_name;
-		int		m_grade;
+		int					m_grade;
 };
 
 std::ostream& operator<<(std::ostream& out, const Bureaucrat& bureaucrat); // <name>, bureaucrat grade <grade>

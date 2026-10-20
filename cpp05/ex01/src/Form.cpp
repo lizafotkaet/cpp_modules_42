@@ -1,6 +1,6 @@
 #include "Form.h"
 
-Form::Form(std::string_view name, int signGrade, int execGrade) :  m_name(name), 
+Form::Form(std::string_view name, int signGrade, int execGrade) : m_name(name), 
 			m_signGrade(signGrade), m_execGrade(execGrade), m_isSigned(false){
 	if (m_signGrade < highestGrade){
 		throw Form::GradeTooHighException();
@@ -35,25 +35,25 @@ const std::string&	Form::getName() const{
 	return m_name;
 }
 
-const bool 			Form::getIsSigned() const{
+bool 				Form::getIsSigned() const{
 	return m_isSigned;
 }
 
-const int			Form::getSignGrade() const{
+int					Form::getSignGrade() const{
 	return m_signGrade;
 }
 
-const int			Form::getExecGrade() const{
+int					Form::getExecGrade() const{
 	return m_execGrade;
 }
 
-// exceptions:
+// Form exceptions:
 
-const char* Form::GradeTooHighException::what() const noexcept{
+const char* 		Form::GradeTooHighException::what() const noexcept{
 	return "form: grade too high";
 }
 
-const char* Form::GradeTooLowException::what() const noexcept{
+const char* 		Form::GradeTooLowException::what() const noexcept{
 	return "form: grade too low";
 }
 
@@ -61,15 +61,19 @@ const char* Form::GradeTooLowException::what() const noexcept{
 (greater than or equal to the required one). Remember, grade 1 is higher than grade 2.
 If the grade is too low, throw a Form::GradeTooLowException*/
 
-void Form::beSigned(const Bureaucrat& b){
+void 				Form::beSigned(const Bureaucrat& b){
 	if (b.getGrade() > this->m_signGrade){
 		throw Form::GradeTooLowException();
 	}
 	m_isSigned = true;
 }
 
-std::ostream& operator<<(std::ostream& out, const Form& f){
-	out << "Form " << f.getName() << (f.getIsSigned() ? "signed; " : "not signed; ")
+// -----------------------insertion operator overload------------------------------- //
+
+std::ostream& 		operator<<(std::ostream& out, const Form& f){
+	out << "Form " << f.getName() << (f.getIsSigned() ? " signed " : " not signed ")
 		<< "(grade required to sign: " << f.getSignGrade()
 		<< ", grade required to execute: " << f.getExecGrade() << ')';
+
+	return out;
 }
