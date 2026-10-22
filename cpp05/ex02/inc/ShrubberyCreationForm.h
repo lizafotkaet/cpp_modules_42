@@ -25,11 +25,17 @@ inside it.
 
 class ShrubberyCreationForm : public AForm {
 	public :
-		ShrubberyCreationForm();
+		ShrubberyCreationForm(std::string_view target = "<target>");
 		ShrubberyCreationForm(ShrubberyCreationForm& other);
 		ShrubberyCreationForm& operator=(ShrubberyCreationForm& other);
 		~ShrubberyCreationForm();
 
-	private :
+        std::string	getTarget() const override;
 
+        void    execute(const Bureaucrat& executor) const override;
+
+	private :
+        std::string m_target;
 };
+
+std::ostream& operator<<(std::ostream& out, const ShrubberyCreationForm& f);

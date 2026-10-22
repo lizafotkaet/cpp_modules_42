@@ -11,12 +11,15 @@ class AForm{
 		AForm& operator=(const AForm& other);
 		virtual ~AForm();
 
-		void	beSigned(const Bureaucrat& b);
+		void				beSigned(const Bureaucrat& b);
+
+		virtual void		execute(Bureaucrat const & executor) const = 0;
 
 		const std::string&	getName() const;
 		bool 				getIsSigned() const;
 		int					getSignGrade() const;
 		int					getExecGrade() const;
+		virtual std::string	getTarget() const = 0;
 
 		class GradeTooHighException : public std::exception{
 			public :

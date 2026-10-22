@@ -6,14 +6,14 @@
 #include <string_view>
 
 #include "colors.h"
-#include "Form.h"
+#include "AForm.h"
 
 /*
 Any attempt to instantiate a Bureaucrat with an invalid grade must throw an exception:
 either a Bureaucrat::GradeTooHighException or a Bureaucrat::GradeTooLowException.
 */
 
-class Form;
+class AForm;
 
 class Bureaucrat{
 	public	:
@@ -27,7 +27,9 @@ class Bureaucrat{
 		void				incGrade();
 		void				decGrade();
 
-		void				signForm(Form& form);
+		void				signForm(AForm& form);
+
+		void				executeForm(const AForm& form) const;
 
 		class GradeTooHighException : public std::exception {
 			public :

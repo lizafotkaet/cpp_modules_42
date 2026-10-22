@@ -1,5 +1,5 @@
 #include "Bureaucrat.h"
-#include "Form.h"
+#include "AForm.h"
 
 Bureaucrat::Bureaucrat(std::string_view name, int grade) : m_name(name) {
 	if (grade < highestGrade){
@@ -68,7 +68,7 @@ int		Bureaucrat::getGrade() const{
 // ----------- signForm method ------------------ //
 /*
 
-This function must call Form::beSigned() to attempt to sign the form. 
+This function must call AForm::beSigned() to attempt to sign the form. 
 If the form is signed successfully, it
 will print something like:
 <bureaucrat> signed <form>
@@ -76,7 +76,7 @@ Otherwise, it will print something like:
 <bureaucrat> couldn’t sign <form> because <reason>.
 */
 
-void	Bureaucrat::signForm(Form& form){
+void	Bureaucrat::signForm(AForm& form){
 
 	try{
 		form.beSigned(*this);
@@ -85,6 +85,16 @@ void	Bureaucrat::signForm(Form& form){
 		std::cout << m_name << " coudln't sign " << form.getName() << " because " << e.what();
 	}
 	std::cout << m_name << " signed " << form.getName();
+}
+
+void	Bureaucrat::executeForm(const AForm& form) const{
+	try{
+		form.execute(*this);
+		std::cout << this->getName() << " executed " << form.getName() << '\n';
+	}
+	catch(std::exception& e){
+		std::cout << this->getName() << " couldn't execute form because " << e.what() << '\n';
+	}
 }
 
 // insertion operator overload: 

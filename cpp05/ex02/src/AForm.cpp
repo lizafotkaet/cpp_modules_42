@@ -68,12 +68,13 @@ void 				AForm::beSigned(const Bureaucrat& b){
 	m_isSigned = true;
 }
 
-// -----------------------insertion operator overload------------------------------- //
+// -----------------------insertion operator overload with the target field added----------------------------- //
 
 std::ostream& 		operator<<(std::ostream& out, const AForm& f){
-	out << "AForm " << f.getName() << (f.getIsSigned() ? " signed " : " not signed ")
+	out << "Form " << f.getName() << (f.getIsSigned() ? " signed " : " not signed ")
 		<< "(grade required to sign: " << f.getSignGrade()
-		<< ", grade required to execute: " << f.getExecGrade() << ')';
+		<< ", grade required to execute: " << f.getExecGrade()
+			<< ", target: " << f.getTarget() << ')';
 
 	return out;
 }

@@ -1,92 +1,42 @@
 #include "Bureaucrat.h"
-#include "Form.h"
+#include "ShrubberyCreationForm.h"
+#include "RobotomyRequestForm.h"
+#include "PresidentialPardonForm.h"
 
 int main(){
 
-	// std::cout << PINK << "\n------**BUREAUCRATIC TESTS**------\n" << RESET;
+	// AForm f{};
+	ShrubberyCreationForm shrub{"28B"};
+	RobotomyRequestForm robotomy{"30A"};
+	PresidentialPardonForm pardon{"15D"};
+	Bureaucrat jim("Jim", 99);
+	Bureaucrat bob("Bob", 120);
+	Bureaucrat alice("Alice", 120);
+	Bureaucrat jan("Jan", 50);
 
-	// std::cout << BUTTERYYELLOW << "\n*DEFAULT BUREAUCRAT TEST:*\n\n" << RESET;
+	std::cout << BUTTERYYELLOW << "\n*THE FORMS (just wtf they are)*\n\n" << RESET;
 
-	// Bureaucrat b;
+	std::cout << shrub << "\n";
+	std::cout << robotomy << '\n';
+	std::cout << pardon << '\n\n';
 
-	// std::cout << b << '\n';
+	std::cout << jim << '\n';
+	std::cout << bob << '\n';
+	std::cout << alice << '\n';
+	std::cout << jan << '\n';
 
-	// std::cout << BUTTERYYELLOW << "\n*TESTING BOB WITH OK VALUES:*\n\n" << RESET;
 
-	// Bureaucrat b1("Bob", 140);
-	// std::cout << "Upon construction: " << b1 << '\n';
-	// b1.decGrade();
-	// std::cout << "After decrementing: " << b1 << '\n';
-	// b1.incGrade();
-	// std::cout << "After incrementing: " << b1 << '\n';
+	std::cout << BUTTERYYELLOW << "\n*TESTING SIGNING THE FORM*\n\n" << RESET;
 
-	// try{
-	// 	std::cout << "Going beyond the range with decrementing: ";
-	// 	for (int i{}; i <= 10; i++){ // exception is thrown at the last iteration, handled by the catch block
-	// 		b1.decGrade();
-	// 	}
-	// 	std::cout << "After the loop: " << b1 << '\n'; // never printed
-	// }
-	// catch(Bureaucrat::GradeTooLowException& e){
-	// 	std::cout << "Error: " << e.what() << '\n';
-	// }
+	std::cout << BUTTERYYELLOW << "\n   --TESTING beSigned (Form method):\n\n" << RESET;
+	
 
-	// std::cout << BUTTERYYELLOW << "\n*TESTING ALICE WITH OK VALUES:*\n\n" << RESET;
 
-	// Bureaucrat b2 ("Alice", 148);
+	std::cout << BUTTERYYELLOW << "\n   --TESTING signForm (Bureaucrat method):\n\n" << RESET;
+	
 
-	// std::cout << "Upon construction: " << b2 << '\n';
 
-	// try{
-	// 	std::cout << "Decrementing Alice's grade to the lowest (never going out of range): ";
-	// 	b2.decGrade();
-	// 	b2.decGrade();
-	// 	std::cout << b2 << '\n';
-
-	// }
-	// catch(std::exception& e){ // we never get here
-	// 	std::cout << "Error: " << e.what() << '\n';
-	// }
-
-	// std::cout << BUTTERYYELLOW << "\n*TESTING JAN WITH OK VALUES:*\n\n" << RESET;
-
-	// Bureaucrat b3 ("Jan", 3);
-
-	// std::cout << "Upon construction: " << b3 << '\n';
-
-	// try{
-	// 	std::cout << "Incrementing Jan's grade to the highest: ";
-	// 	b3.incGrade();
-	// 	b3.incGrade();
-	// 	std::cout << b3 << '\n';
-	// 	std::cout << "Going outside the range with incrementing: ";
-	// 	b3.incGrade();
-	// 	std::cout << b3 << '\n'; // never gets printed
-	// }
-	// catch(Bureaucrat::GradeTooHighException& e){
-	// 	std::cout << "Error: " << e.what() << '\n';
-	// }
-
-	// std::cout << BUTTERYYELLOW << "\n*CONSTRUCTING JIM WITH TOO HIGH A GRADE:*\n\n" << RESET;
-	// try{
-	// 	Bureaucrat b4("Jim", 0); // never gets constructed
-	// }
-	// catch(std::exception& e){
-	// 	std::cout << "Error: " << e.what() << '\n';
-	// }
-
-	// std::cout << BUTTERYYELLOW << "\n*CONSTRUCTING GREG WITH TOO LOW A GRADE:*\n\n" << RESET;
-
-	// try{
-	// 	Bureaucrat b5("Greg", 151); // never gets constructed
-	// }
-	// catch(std::exception& e){
-	// 	std::cout << "Error: " << e.what() << '\n';
-	// }
-
-	Form f1{};
-
-	std::cout << f1 << "\n";
+	std::cout << BUTTERYYELLOW << "\n*DESTROYING EVERYTHING*\n\n" << RESET;
 
 	return 0;
 }
