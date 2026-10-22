@@ -29,6 +29,10 @@ class AForm{
 			public : 
 				const char* what() const noexcept override;
 		};
+		class FormNotSignedException : public std::exception{
+			public :
+				const char* what() const noexcept override;
+		};
 
 		static const int 	lowestGrade{150};
 		static const int 	highestGrade{1};

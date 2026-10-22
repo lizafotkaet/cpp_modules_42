@@ -6,8 +6,8 @@
 class PresidentialPardonForm : public AForm {
 	public :
 		PresidentialPardonForm(std::string_view target = "<target>");
-		PresidentialPardonForm(PresidentialPardonForm& other);
-		PresidentialPardonForm& operator=(PresidentialPardonForm& other);
+		PresidentialPardonForm(const PresidentialPardonForm& other);
+		PresidentialPardonForm& operator=(const PresidentialPardonForm& other);
 		~PresidentialPardonForm();
 
 		std::string	getTarget() const override;
@@ -17,5 +17,3 @@ class PresidentialPardonForm : public AForm {
 	private :
 		std::string m_target;
 };
-
-std::ostream& operator<<(std::ostream& out, const PresidentialPardonForm& f);

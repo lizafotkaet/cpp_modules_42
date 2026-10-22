@@ -26,8 +26,8 @@ inside it.
 class ShrubberyCreationForm : public AForm {
 	public :
 		ShrubberyCreationForm(std::string_view target = "<target>");
-		ShrubberyCreationForm(ShrubberyCreationForm& other);
-		ShrubberyCreationForm& operator=(ShrubberyCreationForm& other);
+		ShrubberyCreationForm(const ShrubberyCreationForm& other);
+		ShrubberyCreationForm& operator=(const ShrubberyCreationForm& other);
 		~ShrubberyCreationForm();
 
         std::string	getTarget() const override;
@@ -37,5 +37,3 @@ class ShrubberyCreationForm : public AForm {
 	private :
         std::string m_target;
 };
-
-std::ostream& operator<<(std::ostream& out, const ShrubberyCreationForm& f);

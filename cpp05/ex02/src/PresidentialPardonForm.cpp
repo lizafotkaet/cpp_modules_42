@@ -8,7 +8,8 @@ PresidentialPardonForm::~PresidentialPardonForm(){
 	std::cout << RED << "PresidentialPardonForm destructor called for " << "PresidentialPardonForm" << '\n' << RESET;
 }
 
-PresidentialPardonForm::PresidentialPardonForm(const PresidentialPardonForm& other) : AForm(other), m_target(other.target){
+PresidentialPardonForm::PresidentialPardonForm(const PresidentialPardonForm& other) : 
+			AForm(other), m_target(other.m_target){
 		std::cout << LIGHTBLUE << "PresidentialPardonForm copy constructor called for " << "PresidentialPardonForm" << '\n' << RESET;
 }
 

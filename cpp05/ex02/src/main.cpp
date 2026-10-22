@@ -18,7 +18,7 @@ int main(){
 
 	std::cout << shrub << "\n";
 	std::cout << robotomy << '\n';
-	std::cout << pardon << '\n\n';
+	std::cout << pardon << "\n\n";
 
 	std::cout << jim << '\n';
 	std::cout << bob << '\n';

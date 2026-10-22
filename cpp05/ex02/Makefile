@@ -1,4 +1,4 @@
-NAME = ./Form
+NAME = ./MoreForms
 
 CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++17
@@ -7,8 +7,8 @@ SRCDIR = src
 INCDIR = inc
 OBJDIR = obj
 
-FILES = main.cpp Bureaucrat.cpp Form.cpp
-HDRS = Bureaucrat.h colors.h Form.h
+FILES = main.cpp Bureaucrat.cpp AForm.cpp ShrubberyCreationForm.cpp RobotomyRequestForm.cpp PresidentialPardonForm.cpp
+HDRS = Bureaucrat.h colors.h AForm.h ShrubberyCreationForm.h RobotomyRequestForm.h PresidentialPardonForm.h 
 
 SRC = $(addprefix $(SRCDIR)/, $(FILES))
 HEADERS = $(addprefix $(INCDIR)/, $(HDRS))
