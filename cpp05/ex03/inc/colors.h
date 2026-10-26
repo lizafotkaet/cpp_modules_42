@@ -7,4 +7,7 @@
 #define PINK "\033[95m"
 #define BABYTEAL "\033[38;5;116m"
 #define BUTTERYYELLOW "\033[38;5;222m"
+#define LIGHTBROWN "\033[38;5;180m"
+#define LIGHTGREEN "\033[38;5;151m"
 #define RESET "\033[0m"
+

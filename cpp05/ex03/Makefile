@@ -1,4 +1,4 @@
-NAME = ./Abstract
+NAME = ./Intern
 
 CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++17
@@ -7,8 +7,10 @@ SRCDIR = src
 INCDIR = inc
 OBJDIR = obj
 
-FILES = main.cpp AAnimal.cpp WrongAnimal.cpp Cat.cpp WrongCat.cpp Dog.cpp Brain.cpp
-HDRS = AAnimal.h Cat.h Dog.h WrongAnimal.h WrongCat.h Brain.h
+FILES = main.cpp Bureaucrat.cpp AForm.cpp ShrubberyCreationForm.cpp \
+		RobotomyRequestForm.cpp PresidentialPardonForm.cpp Intern.cpp
+HDRS = Bureaucrat.h colors.h AForm.h ShrubberyCreationForm.h \
+		RobotomyRequestForm.h PresidentialPardonForm.h Intern.h
 
 SRC = $(addprefix $(SRCDIR)/, $(FILES))
 HEADERS = $(addprefix $(INCDIR)/, $(HDRS))

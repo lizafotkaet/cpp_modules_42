@@ -4,19 +4,22 @@
 
 class Bureaucrat;
 
-class Form{
+class AForm{
 	public :
-		Form(std::string_view name = "<default>", int signGrade = 1, int execGrade = 1);
-		Form(const Form& other);
-		Form& operator=(const Form& other);
-		~Form();
+		AForm(std::string_view name = "<default>", int signGrade = 1, int execGrade = 1);
+		AForm(const AForm& other);
+		AForm& operator=(const AForm& other);
+		virtual ~AForm();
 
-		void	beSigned(const Bureaucrat& b);
+		void				beSigned(const Bureaucrat& b);
+
+		virtual void		execute(Bureaucrat const & executor) const = 0;
 
 		const std::string&	getName() const;
 		bool 				getIsSigned() const;
 		int					getSignGrade() const;
 		int					getExecGrade() const;
+		virtual std::string	getTarget() const = 0;
 
 		class GradeTooHighException : public std::exception{
 			public :
@@ -24,6 +27,10 @@ class Form{
 		};
 		class GradeTooLowException : public std::exception{
 			public : 
+				const char* what() const noexcept override;
+		};
+		class FormNotSignedException : public std::exception{
+			public :
 				const char* what() const noexcept override;
 		};
 
@@ -37,4 +44,4 @@ class Form{
 		bool 				m_isSigned;
 };
 
-std::ostream& operator<<(std::ostream& out, const Form& f);
+std::ostream& operator<<(std::ostream& out, const AForm& f);
