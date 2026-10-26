@@ -9,11 +9,11 @@ Form::Form(std::string_view name, int signGrade, int execGrade) : m_name(name),
 		throw Form::GradeTooLowException();
 	}
 
-	std::cout << GREEN << "Form constructor called for " << m_name << '\n' << RESET;
+	// std::cout << GREEN << "Form constructor called for " << m_name << '\n' << RESET;
 }
 
 Form::~Form(){
-	std::cout << RED << "Form destructor called for " << m_name << '\n' << RESET;
+	// std::cout << RED << "Form destructor called for " << m_name << '\n' << RESET;
 }
 
 Form::Form(const Form& other) : m_name(other.m_name), 
