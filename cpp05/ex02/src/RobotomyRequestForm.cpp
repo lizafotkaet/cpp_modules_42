@@ -2,11 +2,11 @@
 
 RobotomyRequestForm::RobotomyRequestForm(std::string_view target) : 
 			AForm("RobotomyRequestForm", 72, 45), m_target(target) {
-	std::cout << GREEN << "RobotomyRequestForm constructor called for " << m_target << '\n' << RESET;
+	// std::cout << GREEN << "RobotomyRequestForm constructor called for " << m_target << '\n' << RESET;
 };
 
 RobotomyRequestForm::~RobotomyRequestForm(){
-	std::cout << RED << "RobotomyRequestForm destructor called for " << "RobotomyRequestForm" << '\n' << RESET;
+	// std::cout << RED << "RobotomyRequestForm destructor called for " << "RobotomyRequestForm" << '\n' << RESET;
 }
 
 RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm& other) : AForm(other), m_target(other.m_target){
@@ -44,7 +44,7 @@ void	RobotomyRequestForm::execute(const Bureaucrat& executor) const{
 	std::cout << "* BZZZZZZRRRRR... drilling noises *\n";
 
 	if (coin(gen)){
-		std::cout << m_target << "has been robotomized successfully\n";
+		std::cout << m_target << " has been robotomized successfully\n";
 	}
 	else{
 		std::cout << "Robotomy on " << m_target << " failed\n";

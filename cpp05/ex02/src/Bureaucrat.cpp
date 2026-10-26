@@ -9,11 +9,11 @@ Bureaucrat::Bureaucrat(std::string_view name, int grade) : m_name(name) {
 		throw Bureaucrat::GradeTooLowException();
 	}
 	m_grade = grade;
-	std::cout << GREEN << "Bureaucrat constructor called for " << m_name << '\n' << RESET;
+	// std::cout << GREEN << "Bureaucrat constructor called for " << m_name << '\n' << RESET;
 }
 
 Bureaucrat::~Bureaucrat(){
-	std::cout << RED << "Bureaucrat destructor called for " << m_name << '\n' << RESET;
+	// std::cout << RED << "Bureaucrat destructor called for " << m_name << '\n' << RESET;
 }
 
 Bureaucrat::Bureaucrat(const Bureaucrat& other) : m_name(other.m_name), m_grade(other.m_grade){
@@ -92,7 +92,15 @@ void	Bureaucrat::executeForm(const AForm& form) const{
 		form.execute(*this);
 		std::cout << this->getName() << " executed " << form.getName() << '\n';
 	}
-	catch(AForm::FormNotSignedException& e){
+	// catch(AForm::FormNotSignedException& e){
+	// 	std::cout << this->getName() << " couldn't execute form" << form.getName() <<
+	// 			" because " << e.what() << '\n';
+	// }
+	// catch(AForm::GradeTooLowException& e){
+	// 	std::cout << this->getName() << " couldn't execute form" << form.getName() <<
+	// 			" because " << e.what() << '\n';
+	// }
+	catch(std::exception& e){
 		std::cout << this->getName() << " couldn't execute form" << form.getName() <<
 				" because " << e.what() << '\n';
 	}

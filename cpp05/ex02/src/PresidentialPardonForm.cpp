@@ -2,11 +2,11 @@
 
 PresidentialPardonForm::PresidentialPardonForm(std::string_view target) : 
 				AForm("PresidentialPardonForm", 25, 5), m_target(target) {
-	std::cout << GREEN << "PresidentialPardonForm constructor called for " << m_target << '\n' << RESET;
+	// std::cout << GREEN << "PresidentialPardonForm constructor called for " << m_target << '\n' << RESET;
 };
 
 PresidentialPardonForm::~PresidentialPardonForm(){
-	std::cout << RED << "PresidentialPardonForm destructor called for " << "PresidentialPardonForm" << '\n' << RESET;
+	// std::cout << RED << "PresidentialPardonForm destructor called for " << "PresidentialPardonForm" << '\n' << RESET;
 }
 
 PresidentialPardonForm::PresidentialPardonForm(const PresidentialPardonForm& other) : 
@@ -24,7 +24,7 @@ PresidentialPardonForm& PresidentialPardonForm::operator=(const PresidentialPard
 }
 
 void	PresidentialPardonForm::execute(const Bureaucrat& executor) const{
-	if (this->getIsSigned()){
+	if (!this->getIsSigned()){
 		throw FormNotSignedException();
 	}
 	if (executor.getGrade() > this->getExecGrade()){

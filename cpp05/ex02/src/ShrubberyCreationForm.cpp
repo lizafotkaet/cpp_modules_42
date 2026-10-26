@@ -2,11 +2,11 @@
 
 ShrubberyCreationForm::ShrubberyCreationForm(std::string_view target) : 
 			AForm("ShrubberyCreationForm", 145, 137), m_target(target) {
-	std::cout << GREEN << "ShrubberyCreationForm constructor called for " << m_target << '\n' << RESET;
+	// std::cout << GREEN << "ShrubberyCreationForm constructor called for " << m_target << '\n' << RESET;
 };
 
 ShrubberyCreationForm::~ShrubberyCreationForm(){
-	std::cout << RED << "ShrubberyCreationForm destructor called for " << "ShrubberyCreationForm" << '\n' << RESET;
+	// std::cout << RED << "ShrubberyCreationForm destructor called for " << "ShrubberyCreationForm" << '\n' << RESET;
 }
 
 ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm& other) : 

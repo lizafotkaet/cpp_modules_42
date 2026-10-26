@@ -9,11 +9,11 @@ AForm::AForm(std::string_view name, int signGrade, int execGrade) : m_name(name)
 		throw AForm::GradeTooLowException();
 	}
 
-	std::cout << GREEN << "AForm constructor called for " << m_name << '\n' << RESET;
+	// std::cout << GREEN << "AForm constructor called for " << m_name << '\n' << RESET;
 }
 
 AForm::~AForm(){
-	std::cout << RED << "AForm destructor called for " << m_name << '\n' << RESET;
+	// std::cout << RED << "AForm destructor called for " << m_name << '\n' << RESET;
 }
 
 AForm::AForm(const AForm& other) : m_name(other.m_name), 
