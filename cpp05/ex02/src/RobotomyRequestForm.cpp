@@ -1,7 +1,7 @@
 #include "RobotomyRequestForm.h"
 
 RobotomyRequestForm::RobotomyRequestForm(std::string_view target) : 
-			AForm("RobotomyRequestForm", 72, 45), m_target(target) {
+			AForm("RobotomyRequest", 72, 45), m_target(target) {
 	// std::cout << GREEN << "RobotomyRequestForm constructor called for " << m_target << '\n' << RESET;
 };
 

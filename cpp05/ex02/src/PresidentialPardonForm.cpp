@@ -1,7 +1,7 @@
 #include "PresidentialPardonForm.h"
 
 PresidentialPardonForm::PresidentialPardonForm(std::string_view target) : 
-				AForm("PresidentialPardonForm", 25, 5), m_target(target) {
+				AForm("PresidentialPardon", 25, 5), m_target(target) {
 	// std::cout << GREEN << "PresidentialPardonForm constructor called for " << m_target << '\n' << RESET;
 };
 

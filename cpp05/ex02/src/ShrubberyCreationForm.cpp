@@ -1,7 +1,7 @@
 #include "ShrubberyCreationForm.h"
 
 ShrubberyCreationForm::ShrubberyCreationForm(std::string_view target) : 
-			AForm("ShrubberyCreationForm", 145, 137), m_target(target) {
+			AForm("ShrubberyCreation", 145, 137), m_target(target) {
 	// std::cout << GREEN << "ShrubberyCreationForm constructor called for " << m_target << '\n' << RESET;
 };
 
