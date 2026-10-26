@@ -24,12 +24,31 @@ ShrubberyCreationForm& ShrubberyCreationForm::operator=(const ShrubberyCreationF
 }
 
 void	ShrubberyCreationForm::execute(const Bureaucrat& executor) const{
-	try{
-		
+	if (!this->getIsSigned()){
+		throw FormNotSignedException();
 	}
-	catch(std::exception& e){
+	if (executor.getGrade() > this->getExecGrade()){
+		throw GradeTooLowException();
+	}
 
+	std::ofstream file(getTarget() + "_shrubbery");
+	if (!file){
+		throw std::runtime_error("could not open file");
 	}
+	// convert tree to raw string literal (with R"TREE( ... )TREE: inside R"(...)" everything is treated literally)
+	file << R"TREE(                 &&& &&  & && 
+             && &\/&\|& ()|/ @, &&
+             &\/(/&/&||/& /_/)_&/_&
+          &() &\/&|()|/&\/ '%' & ()
+         &_\_&&_\ |& |&&/&__%_/_& &&
+       &&   && & &| &| /& & % ()& /&&
+        ()&_---()&\&\|&&-&&--%---()~
+            &&     \|||
+                    |||
+                    |||
+                    |||
+              , -=-~  .-^- _
+)TREE";
 }
 
 // target getter:

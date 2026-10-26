@@ -80,11 +80,11 @@ void	Bureaucrat::signForm(Form& form){
 
 	try{
 		form.beSigned(*this);
+		std::cout << m_name << " signed " << form.getName() << '\n';
 	}
 	catch(std::exception& e){
 		std::cout << m_name << " coudln't sign " << form.getName() << " because " << e.what() << '\n';
 	}
-	std::cout << m_name << " signed " << form.getName() << '\n';
 }
 
 // insertion operator overload: 

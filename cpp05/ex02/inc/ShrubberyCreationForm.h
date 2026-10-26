@@ -2,6 +2,8 @@
 
 #include "AForm.h"
 #include "Bureaucrat.h"
+#include <fstream>
+#include <stdexcept>
 
 /*
 Required grades: sign 145, exec 137

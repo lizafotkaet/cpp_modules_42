@@ -2,6 +2,7 @@
 
 #include "AForm.h"
 #include "Bureaucrat.h"
+#include <random>
 
 class RobotomyRequestForm : public AForm {
 	public :

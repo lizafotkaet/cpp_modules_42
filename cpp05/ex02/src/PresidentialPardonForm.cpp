@@ -1,6 +1,7 @@
 #include "PresidentialPardonForm.h"
 
-PresidentialPardonForm::PresidentialPardonForm(std::string_view target) : AForm("PresidentialPardonForm", 25, 5), m_target(target) {
+PresidentialPardonForm::PresidentialPardonForm(std::string_view target) : 
+				AForm("PresidentialPardonForm", 25, 5), m_target(target) {
 	std::cout << GREEN << "PresidentialPardonForm constructor called for " << m_target << '\n' << RESET;
 };
 
@@ -23,12 +24,14 @@ PresidentialPardonForm& PresidentialPardonForm::operator=(const PresidentialPard
 }
 
 void	PresidentialPardonForm::execute(const Bureaucrat& executor) const{
-	try{
-
+	if (this->getIsSigned()){
+		throw FormNotSignedException();
 	}
-	catch(std::exception& e){
-
+	if (executor.getGrade() > this->getExecGrade()){
+		throw GradeTooLowException();
 	}
+
+	std::cout << m_target << " has been pardoned by Zaphod Beeblebrox\n";
 }
 
 std::string	PresidentialPardonForm::getTarget() const{

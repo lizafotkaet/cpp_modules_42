@@ -57,6 +57,10 @@ const char* 		AForm::GradeTooLowException::what() const noexcept{
 	return "form: grade too low";
 }
 
+const char* AForm::FormNotSignedException::what() const noexcept{
+	return "form: not signed";
+}
+
 /*changes the form’s status to signed if the bureaucrat’s grade is high enough
 (greater than or equal to the required one). Remember, grade 1 is higher than grade 2.
 If the grade is too low, throw a AForm::GradeTooLowException*/
