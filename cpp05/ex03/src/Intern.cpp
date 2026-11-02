@@ -22,14 +22,16 @@ Intern& Intern::operator=(const Intern& other){
 }
 
 AForm* Intern::makeForm(std::string_view name, std::string_view target){
+	
+	using FormCreator = AForm* (*)(const std::string_view);
+	
 	const std::string names[3] = {
 			"ShrubberyCreation",
 			"RobotomyRequest",
 			"PresidentialPardon"
 			};
-
 	// there's no parameter name cause we only describe the type of a ft
-	AForm* (*forms[3])(const std::string_view) = {
+	FormCreator forms[3]= {
 			&newShrubbery, 
 			&newRobotomy, 
 			&newPardon
